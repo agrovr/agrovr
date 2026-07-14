@@ -90,6 +90,9 @@ function onlineLinks(readme) {
 
 async function validateReadme(readme) {
   if (!readme.trim()) fail("README.md is empty.");
+  if (!/<h1\b[^>]*>\s*Ashmit Grover\s*<\/h1>/i.test(readme)) {
+    fail("README must include a semantic Ashmit Grover H1 outside the hero image.");
+  }
 
   const readmeInfo = await stat(path.join(ROOT, "README.md"));
   if (readmeInfo.size >= 500 * 1024) {
@@ -167,6 +170,14 @@ async function validateSvg(relativePath) {
   ];
   for (const rule of forbidden) {
     if (rule.pattern.test(source)) fail(relativePath + " contains forbidden " + rule.label + " content.");
+  }
+
+  if (relativePath.includes("activity-orbit-")) {
+    const isMobile = relativePath.includes("activity-orbit-mobile-");
+    const expectedViewBox = isMobile ? 'viewBox="0 0 600 720"' : 'viewBox="0 0 1000 490"';
+    if (!source.includes(expectedViewBox) || !source.includes("fifty-three-week")) {
+      fail(relativePath + " is stale or does not contain the full 53-week flight recorder.");
+    }
   }
 }
 
