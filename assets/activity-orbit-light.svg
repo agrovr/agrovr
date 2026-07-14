@@ -1,366 +1,1252 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" role="img" aria-labelledby="activity-title activity-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 490" role="img" aria-labelledby="activity-title activity-desc">
   <title id="activity-title">Activity constellation</title>
-  <desc id="activity-desc">A twelve-week constellation of publicly visible GitHub contribution days, with 776 contributions across 44 active days in the trailing year, a current signal of 6 days, and a longest signal of 29 days.</desc>
+  <desc id="activity-desc">A fifty-three-week constellation of publicly visible GitHub contribution days, with 778 contributions across 44 active days in the trailing year, a current signal of 6 days, and a longest signal of 29 days.</desc>
   <defs>
     <pattern id="activity-grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M32 0H0V32" fill="none" stroke="#7d688f" stroke-width="0.65" opacity="0.1"/>
     </pattern>
   </defs>
-  <rect width="1000" height="410" fill="#f5f0e7"/>
-  <rect width="1000" height="410" fill="url(#activity-grid)"/>
-  <path d="M16 40V16h24M960 16h24v24M984 370v24h-24M40 394H16v-24" fill="none" stroke="#7f6794" stroke-width="1.3" opacity="0.62"/>
+  <rect width="1000" height="490" fill="#f5f0e7"/>
+  <rect width="1000" height="490" fill="url(#activity-grid)"/>
+  <path d="M16 40V16h24M960 16h24v24M984 450v24h-24M40 474H16v-24" fill="none" stroke="#7f6794" stroke-width="1.3" opacity="0.62"/>
   <text x="44" y="50" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">ACTIVITY CONSTELLATION</text>
-  <text x="45" y="78" font-family="Georgia, Times New Roman, serif" font-size="18" font-style="italic" fill="#7957a0">twelve-week trajectory · trailing-year signal metrics</text>
+  <text x="45" y="78" font-family="Georgia, Times New Roman, serif" font-size="18" font-style="italic" fill="#7957a0">fifty-three-week flight recorder · trailing-year signal metrics</text>
   <text x="956" y="50" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.3" fill="#5b496d">VISIBLE GITHUB SIGNAL / UTC</text>
-  <text x="72" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.2" fill="#5b496d">APR</text>
-  <text x="119" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.2" fill="#5b496d">MAY</text>
-  <text x="354" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.2" fill="#5b496d">JUN</text>
-  <text x="542" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.2" fill="#5b496d">JUL</text>
-  <path d="M55 248C180 90 430 330 624 144" fill="none" stroke="#7957a0" stroke-width="1" stroke-dasharray="3 8" opacity="0.26"/>
-  <path d="M542 269 L542 302 L542 335 L589 137 L589 170 L589 203" fill="none" stroke="#b45f1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.62"/>
-  <g aria-label="Recent contribution days">
-    <circle cx="72" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+  <text x="54" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">JUL</text>
+  <text x="105.15" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">AUG</text>
+  <text x="190.4" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">SEP</text>
+  <text x="258.6" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">OCT</text>
+  <text x="326.8" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">NOV</text>
+  <text x="412.05" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">DEC</text>
+  <text x="480.25" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">JAN</text>
+  <text x="548.45" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">FEB</text>
+  <text x="616.65" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">MAR</text>
+  <text x="701.9" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">APR</text>
+  <text x="770.1" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">MAY</text>
+  <text x="855.35" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">JUN</text>
+  <text x="923.5500000000001" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="#5b496d">JUL</text>
+  <path d="M50 245C290 92 670 326 950 142" fill="none" stroke="#7957a0" stroke-width="1" stroke-dasharray="3 8" opacity="0.18"/>
+  <path d="M923.5500000000001 233 L923.5500000000001 255 L923.5500000000001 277 L940.6 145 L940.6 167 L940.6 189" fill="none" stroke="#b45f1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.62"/>
+  <g aria-label="Trailing-year contribution days">
+    <g opacity="0.22">
+      <circle cx="54" cy="145" r="1.8" fill="none" stroke="#7f6794"/>
+      <title>2025-07-13: outside the trailing 365-day window</title>
+    </g>
+    <g opacity="0.22">
+      <circle cx="54" cy="167" r="1.8" fill="none" stroke="#7f6794"/>
+      <title>2025-07-14: outside the trailing 365-day window</title>
+    </g>
+    <circle cx="54" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="54" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="54" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="54" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="54" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="71.05" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-07-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="88.1" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="105.15" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="122.2" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="139.25" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="156.3" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-08-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="173.35000000000002" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="190.4" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="207.45000000000002" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="224.5" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-09-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="241.55" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="258.6" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="275.65" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="292.70000000000005" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-10-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="309.75" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="326.8" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="343.85" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="360.90000000000003" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="377.95" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-11-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="395" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="412.05" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="429.1" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="446.15000000000003" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2025-12-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="463.20000000000005" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="480.25" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="497.3" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-16: 0 visible contributions</title>
+    </circle>
+    <g>
+      <circle cx="497.3" cy="277" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-01-17: 27 visible contributions</title>
+      </circle>
+    </g>
+    <g>
+      <circle cx="514.35" cy="145" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-01-18: 2 visible contributions</title>
+      </circle>
+    </g>
+    <circle cx="514.35" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="514.35" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="514.35" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="514.35" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="514.35" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="514.35" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="531.4000000000001" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-01-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="548.45" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="565.5" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="565.5" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="565.5" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="565.5" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="565.5" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-12: 0 visible contributions</title>
+    </circle>
+    <g>
+      <circle cx="565.5" cy="255" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-02-13: 24 visible contributions</title>
+      </circle>
+    </g>
+    <g>
+      <circle cx="565.5" cy="277" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-02-14: 5 visible contributions</title>
+      </circle>
+    </g>
+    <circle cx="582.5500000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="582.5500000000001" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="599.6" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-02-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="616.65" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="633.7" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="650.75" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-15: 0 visible contributions</title>
+    </circle>
+    <g>
+      <circle cx="650.75" cy="167" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-03-16: 12 visible contributions</title>
+      </circle>
+    </g>
+    <circle cx="650.75" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="650.75" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="650.75" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-19: 0 visible contributions</title>
+    </circle>
+    <circle cx="650.75" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-20: 0 visible contributions</title>
+    </circle>
+    <circle cx="650.75" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-21: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-22: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-23: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-26: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-27: 0 visible contributions</title>
+    </circle>
+    <circle cx="667.8000000000001" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-28: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-29: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-30: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-03-31: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-01: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-02: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-03: 0 visible contributions</title>
+    </circle>
+    <circle cx="684.85" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-04: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-05: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-06: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-07: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-08: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-09: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-10: 0 visible contributions</title>
+    </circle>
+    <circle cx="701.9" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-11: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-12: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-13: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-14: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-15: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-16: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-17: 0 visible contributions</title>
+    </circle>
+    <circle cx="718.95" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-18: 0 visible contributions</title>
+    </circle>
+    <circle cx="736" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-19: 0 visible contributions</title>
+    </circle>
+    <g>
+      <circle cx="736" cy="167" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-04-20: 3 visible contributions</title>
+      </circle>
+    </g>
+    <g>
+      <circle cx="736" cy="189" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-04-21: 6 visible contributions</title>
+      </circle>
+    </g>
+    <g>
+      <circle cx="736" cy="211" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-04-22: 7 visible contributions</title>
+      </circle>
+    </g>
+    <g>
+      <circle cx="736" cy="233" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-04-23: 1 visible contribution</title>
+      </circle>
+    </g>
+    <circle cx="736" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-24: 0 visible contributions</title>
+    </circle>
+    <circle cx="736" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
+      <title>2026-04-25: 0 visible contributions</title>
+    </circle>
+    <circle cx="753.0500000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-04-26: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-04-27: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-04-28: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-04-29: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-04-30: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-01: 0 visible contributions</title>
     </circle>
-    <circle cx="72" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="753.0500000000001" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-02: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-03: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-04: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-05: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-06: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-07: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-08: 0 visible contributions</title>
     </circle>
-    <circle cx="119" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="770.1" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-09: 0 visible contributions</title>
     </circle>
-    <circle cx="166" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="787.15" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-10: 0 visible contributions</title>
     </circle>
-    <circle cx="166" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="787.15" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-05-11: 0 visible contributions</title>
     </circle>
     <g>
-      <circle cx="166" cy="203" r="5" fill="#cdbed8" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="787.15" cy="189" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-12: 2 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="166" cy="236" r="5" fill="#cdbed8" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="787.15" cy="211" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-13: 9 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="166" cy="269" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="787.15" cy="233" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-14: 12 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="166" cy="302" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="787.15" cy="255" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-15: 13 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="166" cy="335" r="5" fill="#cdbed8" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="787.15" cy="277" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-16: 8 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="137" r="5" fill="#cdbed8" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="145" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-17: 9 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="170" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="167" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-18: 14 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="203" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="189" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-19: 34 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="236" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="211" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-20: 50 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="269" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="233" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-21: 40 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="302" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="255" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-22: 40 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="213" cy="335" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="804.2" cy="277" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-23: 25 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="137" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="145" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-24: 26 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="170" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="167" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-25: 38 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="203" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="189" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-26: 31 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="236" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="211" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-27: 21 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="269" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="233" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-28: 27 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="302" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="255" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-29: 20 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="260" cy="335" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="821.25" cy="277" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-30: 27 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="137" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="145" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-05-31: 21 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="170" r="9.5" fill="#654486" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="167" r="6.4" fill="#654486" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-01: 30 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="203" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="189" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-02: 27 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="236" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="211" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-03: 19 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="269" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="233" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-04: 20 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="302" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="255" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-05: 24 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="307" cy="335" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="838.3000000000001" cy="277" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-06: 17 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="354" cy="137" r="6.5" fill="#ad91c2" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="855.35" cy="145" r="4.2" fill="#ad91c2" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-07: 10 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="354" cy="170" r="5" fill="#cdbed8" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="855.35" cy="167" r="3.2" fill="#cdbed8" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-08: 7 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="354" cy="203" r="8" fill="#8d6cad" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="855.35" cy="189" r="5.3" fill="#8d6cad" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-06-09: 27 visible contributions</title>
       </circle>
     </g>
-    <circle cx="354" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="855.35" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-10: 0 visible contributions</title>
     </circle>
-    <circle cx="354" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="855.35" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-11: 0 visible contributions</title>
     </circle>
-    <circle cx="354" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="855.35" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-12: 0 visible contributions</title>
     </circle>
-    <circle cx="354" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="855.35" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-13: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-14: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-15: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-16: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-17: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-18: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-19: 0 visible contributions</title>
     </circle>
-    <circle cx="401" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="872.4000000000001" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-20: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-21: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-22: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-23: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-24: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-25: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-26: 0 visible contributions</title>
     </circle>
-    <circle cx="448" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="889.45" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-27: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-28: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-29: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-06-30: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-01: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="269" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="233" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-02: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="302" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="255" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-03: 0 visible contributions</title>
     </circle>
-    <circle cx="495" cy="335" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="906.5" cy="277" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-04: 0 visible contributions</title>
     </circle>
-    <circle cx="542" cy="137" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="923.5500000000001" cy="145" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-05: 0 visible contributions</title>
     </circle>
-    <circle cx="542" cy="170" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="923.5500000000001" cy="167" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-06: 0 visible contributions</title>
     </circle>
-    <circle cx="542" cy="203" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="923.5500000000001" cy="189" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-07: 0 visible contributions</title>
     </circle>
-    <circle cx="542" cy="236" r="3.2" fill="#eee6da" stroke="#7f6794" stroke-width="1" opacity="0.62">
+    <circle cx="923.5500000000001" cy="211" r="2.4" fill="#eee6da" stroke="#7f6794" stroke-width="0.8" opacity="0.62">
       <title>2026-07-08: 0 visible contributions</title>
     </circle>
     <g>
-      <circle cx="542" cy="269" r="5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="923.5500000000001" cy="233" r="3.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-07-09: 1 visible contribution</title>
       </circle>
     </g>
     <g>
-      <circle cx="542" cy="302" r="6.5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="923.5500000000001" cy="255" r="4.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-07-10: 14 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="542" cy="335" r="6.5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="923.5500000000001" cy="277" r="4.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-07-11: 10 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="589" cy="137" r="6.5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="940.6" cy="145" r="4.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-07-12: 11 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="589" cy="170" r="5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
+      <circle cx="940.6" cy="167" r="3.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
         <title>2026-07-13: 2 visible contributions</title>
       </circle>
     </g>
     <g>
-      <circle cx="589" cy="203" r="14" fill="none" stroke="#b45f1e" stroke-width="1.5" opacity="0.72"/>
-      <circle cx="589" cy="203" r="5" fill="#b45f1e" stroke="#f5f0e7" stroke-width="1.2">
-        <title>2026-07-14: 3 visible contributions</title>
+      <circle cx="940.6" cy="189" r="9" fill="none" stroke="#b45f1e" stroke-width="1.1" opacity="0.72"/>
+      <circle cx="940.6" cy="189" r="3.2" fill="#b45f1e" stroke="#f5f0e7" stroke-width="0.9">
+        <title>2026-07-14: 5 visible contributions</title>
       </circle>
     </g>
-    <g opacity="0.28">
-      <circle cx="589" cy="236" r="3" fill="none" stroke="#7f6794"/>
-      <path d="M586 236H592" stroke="#7f6794" stroke-width="1"/>
+    <g opacity="0.22">
+      <circle cx="940.6" cy="211" r="1.8" fill="none" stroke="#7f6794"/>
       <title>2026-07-15: future UTC day</title>
     </g>
-    <g opacity="0.28">
-      <circle cx="589" cy="269" r="3" fill="none" stroke="#7f6794"/>
-      <path d="M586 269H592" stroke="#7f6794" stroke-width="1"/>
+    <g opacity="0.22">
+      <circle cx="940.6" cy="233" r="1.8" fill="none" stroke="#7f6794"/>
       <title>2026-07-16: future UTC day</title>
     </g>
-    <g opacity="0.28">
-      <circle cx="589" cy="302" r="3" fill="none" stroke="#7f6794"/>
-      <path d="M586 302H592" stroke="#7f6794" stroke-width="1"/>
+    <g opacity="0.22">
+      <circle cx="940.6" cy="255" r="1.8" fill="none" stroke="#7f6794"/>
       <title>2026-07-17: future UTC day</title>
     </g>
-    <g opacity="0.28">
-      <circle cx="589" cy="335" r="3" fill="none" stroke="#7f6794"/>
-      <path d="M586 335H592" stroke="#7f6794" stroke-width="1"/>
+    <g opacity="0.22">
+      <circle cx="940.6" cy="277" r="1.8" fill="none" stroke="#7f6794"/>
       <title>2026-07-18: future UTC day</title>
     </g>
   </g>
-  <path d="M656 104V344" stroke="#7f6794" stroke-width="1" opacity="0.42"/>
-  <text x="700" y="115" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">CURRENT SIGNAL</text>
-  <text x="700" y="150" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">6 DAYS</text>
-  <text x="700" y="178" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">LONGEST ARC / 365D</text>
-  <text x="700" y="213" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">29 DAYS</text>
-  <text x="700" y="241" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">ACTIVE DAYS / 365D</text>
-  <text x="700" y="276" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">44 / 365</text>
-  <text x="700" y="304" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">CONTRIBUTIONS / 365D</text>
-  <text x="700" y="339" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">776</text>
-  <circle cx="50" cy="373" r="4" fill="#b45f1e"/>
-  <text x="64" y="378" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="#5b496d">CURRENT SIGNAL</text>
-  <text x="956" y="378" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="#5b496d">JUL 15, 2025 — JUL 14, 2026 / UTC</text>
+  <path d="M48 312H952" stroke="#7f6794" stroke-width="1" opacity="0.42"/>
+  <text x="52" y="352" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">CURRENT SIGNAL</text>
+  <text x="52" y="387" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">6 DAYS</text>
+  <text x="286" y="352" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">LONGEST ARC / 365D</text>
+  <text x="286" y="387" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">29 DAYS</text>
+  <text x="530" y="352" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">ACTIVE DAYS / 365D</text>
+  <text x="530" y="387" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">44 / 365</text>
+  <text x="760" y="352" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">CONTRIBUTIONS / 365D</text>
+  <text x="760" y="387" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">778</text>
+  <circle cx="50" cy="455" r="4" fill="#b45f1e"/>
+  <text x="64" y="460" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="#5b496d">CURRENT SIGNAL</text>
+  <text x="956" y="460" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="#5b496d">JUL 15, 2025 — JUL 14, 2026 / UTC</text>
 </svg>
