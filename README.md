@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img src="./assets/hero-light.svg" alt="Ashmit Grover's Orbital Systems Atlas, charting AI products, research agents, and cloud systems" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-motion-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-motion-light.gif">
+  <img src="./assets/hero-motion-light.gif" alt="Ashmit Grover's animated Orbital Systems Atlas, charting AI products, research agents, and cloud systems" width="100%">
 </picture>
 
 <h1 align="center">Ashmit Grover</h1>
@@ -83,6 +83,35 @@ My work sits where product decisions meet system design: shaping an ambiguous wo
 - Optional NVIDIA-hosted, NIM-compatible execution path
 
 This is an independent project inspired by NVIDIA AI-Q; it is not affiliated with or endorsed by NVIDIA.
+
+</details>
+
+## Activity constellation
+
+<a href="https://github.com/agrovr?tab=overview">
+  <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/activity-orbit-mobile-dark.svg">
+    <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/activity-orbit-mobile-light.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-orbit-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/activity-orbit-light.svg">
+    <img src="./assets/activity-orbit-light.svg" alt="Twelve-week activity constellation with current and longest GitHub contribution signals measured over the trailing year" width="100%">
+  </picture>
+</a>
+
+<!-- activity-summary:start -->
+**Signal summary:** **776 publicly visible contributions** across **43 active days** in the last 365 days · **6-day current signal** · **29-day longest arc** · through **2026-07-14 UTC**.
+<!-- activity-summary:end -->
+
+<details>
+<summary><strong>Decode the activity signal</strong></summary>
+
+- Each star is one UTC day in the latest twelve-week flight path; size reflects GitHub's relative contribution level.
+- Current signal, longest arc, active days, and contribution count use the trailing 365-day calendar visible to the repository workflow.
+- A current signal may end yesterday so an unfinished UTC day does not break the streak.
+- The atlas refreshes from GitHub's own GraphQL contribution calendar. It requests no private repository names and uses no streak service, visitor counter, or remotely hosted widget.
+- The hero's slow acquisition loop is a repository-owned GIF, so GitHub's animated-image and reduced-motion preferences remain in control.
+
+**[Open the native contribution log](https://github.com/agrovr?tab=overview)**
 
 </details>
 

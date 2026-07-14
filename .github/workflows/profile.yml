@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "17 11 * * 1"
+    - cron: "17 11 * * *"
   workflow_dispatch:
 
 permissions:
@@ -35,7 +35,9 @@ jobs:
           node-version: 22
 
       - name: Verify profile files
-        run: node scripts/verify-profile.mjs
+        run: |
+          node --test scripts/profile-core.test.mjs
+          node scripts/verify-profile.mjs
 
   update-telemetry:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
@@ -44,30 +46,33 @@ jobs:
     permissions:
       contents: write
     env:
-      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-      GITHUB_TOKEN: ${{ github.token }}
+      TARGET_BRANCH: ${{ github.ref_name }}
     steps:
-      - name: Check out the default branch
+      - name: Check out the target branch
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          ref: ${{ github.ref_name }}
 
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
 
-      - name: Generate public telemetry
+      - name: Generate public signals
         run: node scripts/generate-profile.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Verify generated profile
-        run: node scripts/verify-profile.mjs
+        run: |
+          node --test scripts/profile-core.test.mjs
+          node scripts/verify-profile.mjs
 
       - name: Detect telemetry changes
         id: telemetry
         shell: bash
         run: |
-          if git diff --quiet -- assets/orbital-telemetry-light.svg assets/orbital-telemetry-dark.svg; then
+          if git diff --quiet -- README.md assets/orbital-telemetry-light.svg assets/orbital-telemetry-dark.svg assets/activity-orbit-light.svg assets/activity-orbit-dark.svg assets/activity-orbit-mobile-light.svg assets/activity-orbit-mobile-dark.svg; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -79,6 +84,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- assets/orbital-telemetry-light.svg assets/orbital-telemetry-dark.svg
-          git commit -m "Update orbital telemetry"
-          git push origin "HEAD:$DEFAULT_BRANCH"
+          git add -- README.md assets/orbital-telemetry-light.svg assets/orbital-telemetry-dark.svg assets/activity-orbit-light.svg assets/activity-orbit-dark.svg assets/activity-orbit-mobile-light.svg assets/activity-orbit-mobile-dark.svg
+          git commit -m "Update orbital signals"
+          git push origin "HEAD:$TARGET_BRANCH"

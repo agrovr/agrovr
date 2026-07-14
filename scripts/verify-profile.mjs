@@ -9,14 +9,24 @@ const REQUIRED_FILES = [
   "README.md",
   "assets/hero-light.svg",
   "assets/hero-dark.svg",
+  "assets/hero-motion-light.gif",
+  "assets/hero-motion-dark.gif",
   "assets/roleforge-mission-light.svg",
   "assets/roleforge-mission-dark.svg",
   "assets/kuberesearch-mission-light.svg",
   "assets/kuberesearch-mission-dark.svg",
   "assets/orbital-telemetry-light.svg",
   "assets/orbital-telemetry-dark.svg",
+  "assets/activity-orbit-light.svg",
+  "assets/activity-orbit-dark.svg",
+  "assets/activity-orbit-mobile-light.svg",
+  "assets/activity-orbit-mobile-dark.svg",
   "scripts/generate-profile.mjs",
+  "scripts/profile-core.mjs",
+  "scripts/profile-core.test.mjs",
+  "scripts/generate-hero-motion.py",
   "scripts/verify-profile.mjs",
+  "requirements-motion.txt",
   ".github/workflows/profile.yml",
   ".github/dependabot.yml",
 ];
@@ -107,6 +117,15 @@ async function validateReadme(readme) {
   for (const widget of UNRELIABLE_WIDGETS) {
     if (lower.includes(widget)) fail("README uses a banned third-party widget pattern: " + widget);
   }
+
+  for (const marker of ["<!-- activity-summary:start -->", "<!-- activity-summary:end -->"]) {
+    if (readme.split(marker).length !== 2) {
+      fail("README must contain exactly one " + marker + " marker.");
+    }
+  }
+  if (!readme.includes("Decode the activity signal")) {
+    fail("README is missing the accessible activity-signal explanation.");
+  }
 }
 
 async function validateSvg(relativePath) {
@@ -123,10 +142,37 @@ async function validateSvg(relativePath) {
     { label: "event handler", pattern: /\son[a-z]+\s*=/i },
     { label: "external stylesheet or asset", pattern: /(?:href\s*=|url\(|@import)[^>\n]*https?:\/\//i },
     { label: "font-face", pattern: /@font-face/i },
+    { label: "unsupported SVG animation", pattern: /<animate(?:Motion|Transform)?\b|@keyframes|\banimation\s*:/i },
   ];
   for (const rule of forbidden) {
     if (rule.pattern.test(source)) fail(relativePath + " contains forbidden " + rule.label + " content.");
   }
+}
+
+async function validateGif(relativePath) {
+  const source = await readFile(path.join(ROOT, relativePath));
+  const signature = source.subarray(0, 6).toString("ascii");
+  if (!["GIF87a", "GIF89a"].includes(signature)) {
+    fail(relativePath + " is not a valid GIF document.");
+    return;
+  }
+  if (source.length > 5 * 1024 * 1024) {
+    fail(relativePath + " exceeds the 5 MiB profile-motion budget.");
+  }
+  const width = source.readUInt16LE(6);
+  const height = source.readUInt16LE(8);
+  if (relativePath.includes("hero-motion") && (width !== 1000 || height !== 420)) {
+    fail(relativePath + " must be 1000 by 420 pixels.");
+  }
+
+  const graphicControl = Buffer.from([0x21, 0xf9, 0x04]);
+  let frames = 0;
+  let offset = 0;
+  while ((offset = source.indexOf(graphicControl, offset)) >= 0) {
+    frames += 1;
+    offset += graphicControl.length;
+  }
+  if (frames < 2) fail(relativePath + " is not animated.");
 }
 
 async function checkUrl(url) {
@@ -173,14 +219,15 @@ async function main() {
   await validateReadme(readme);
 
   if (await exists("assets")) {
-    const svgFiles = (await readdir(path.join(ROOT, "assets")))
-      .filter((name) => name.toLowerCase().endsWith(".svg"))
-      .sort();
+    const assetFiles = await readdir(path.join(ROOT, "assets"));
+    const svgFiles = assetFiles.filter((name) => name.toLowerCase().endsWith(".svg")).sort();
+    const gifFiles = assetFiles.filter((name) => name.toLowerCase().endsWith(".gif")).sort();
     for (const name of svgFiles) await validateSvg(path.join("assets", name));
+    for (const name of gifFiles) await validateGif(path.join("assets", name));
   }
 
   const checkedText = [readme];
-  for (const relativePath of REQUIRED_FILES.filter((item) => !item.endsWith(".svg") && item !== "README.md")) {
+  for (const relativePath of REQUIRED_FILES.filter((item) => !/\.(?:svg|gif)$/i.test(item) && item !== "README.md")) {
     if (await exists(relativePath)) checkedText.push(await readFile(path.join(ROOT, relativePath), "utf8"));
   }
   const combined = checkedText.join("\n");
