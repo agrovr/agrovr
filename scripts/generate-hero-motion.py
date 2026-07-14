@@ -1,7 +1,7 @@
 """Generate the repository-owned light/dark Orbital Systems Atlas motion assets.
 
 This script is intentionally not part of the daily profile workflow. The WebP files
-are brand artwork, while the activity tracker is the only data-driven visual.
+are brand artwork, while the compact public mission table is refreshed separately.
 """
 
 from __future__ import annotations
