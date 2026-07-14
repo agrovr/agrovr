@@ -9,16 +9,14 @@ const REQUIRED_FILES = [
   "README.md",
   "assets/hero-light.svg",
   "assets/hero-dark.svg",
-  "assets/hero-motion-light.gif",
-  "assets/hero-motion-dark.gif",
-  "assets/hero-motion-mobile-light.gif",
-  "assets/hero-motion-mobile-dark.gif",
+  "assets/hero-motion-light.webp",
+  "assets/hero-motion-dark.webp",
+  "assets/hero-motion-mobile-light.webp",
+  "assets/hero-motion-mobile-dark.webp",
   "assets/roleforge-mission-light.svg",
   "assets/roleforge-mission-dark.svg",
   "assets/kuberesearch-mission-light.svg",
   "assets/kuberesearch-mission-dark.svg",
-  "assets/orbital-telemetry-light.svg",
-  "assets/orbital-telemetry-dark.svg",
   "assets/activity-orbit-light.svg",
   "assets/activity-orbit-dark.svg",
   "assets/activity-orbit-mobile-light.svg",
@@ -92,6 +90,9 @@ function onlineLinks(readme) {
 
 async function validateReadme(readme) {
   if (!readme.trim()) fail("README.md is empty.");
+  if (!/<h1\b[^>]*>\s*Ashmit Grover\s*<\/h1>/i.test(readme)) {
+    fail("README must include a semantic Ashmit Grover H1 outside the hero image.");
+  }
 
   const readmeInfo = await stat(path.join(ROOT, "README.md"));
   if (readmeInfo.size >= 500 * 1024) {
@@ -120,13 +121,34 @@ async function validateReadme(readme) {
     if (lower.includes(widget)) fail("README uses a banned third-party widget pattern: " + widget);
   }
 
-  for (const marker of ["<!-- activity-summary:start -->", "<!-- activity-summary:end -->"]) {
+  for (const marker of [
+    "<!-- activity-summary:start -->",
+    "<!-- activity-summary:end -->",
+    "<!-- transmission-summary:start -->",
+    "<!-- transmission-summary:end -->",
+  ]) {
     if (readme.split(marker).length !== 2) {
       fail("README must contain exactly one " + marker + " marker.");
     }
   }
   if (!readme.includes("Decode the activity signal")) {
     fail("README is missing the accessible activity-signal explanation.");
+  }
+  if (!readme.includes("prefers-reduced-motion: reduce")) {
+    fail("README is missing the static reduced-motion hero fallback.");
+  }
+  const firstAnimatedHero = readme.indexOf("hero-motion-mobile-dark.webp");
+  for (const staticSource of [
+    '(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg',
+    '(prefers-reduced-motion: reduce) and (prefers-color-scheme: light)" srcset="./assets/hero-light.svg',
+  ]) {
+    const staticIndex = readme.indexOf(staticSource);
+    if (staticIndex < 0 || firstAnimatedHero < 0 || staticIndex > firstAnimatedHero) {
+      fail("README reduced-motion sources must precede every animated hero source.");
+    }
+  }
+  if ((readme.match(/type="image\/webp"/g) || []).length !== 4) {
+    fail("README must declare all four animated hero sources as WebP.");
   }
 }
 
@@ -149,39 +171,107 @@ async function validateSvg(relativePath) {
   for (const rule of forbidden) {
     if (rule.pattern.test(source)) fail(relativePath + " contains forbidden " + rule.label + " content.");
   }
+
+  if (relativePath.includes("activity-orbit-")) {
+    const isMobile = relativePath.includes("activity-orbit-mobile-");
+    const expectedViewBox = isMobile ? 'viewBox="0 0 600 720"' : 'viewBox="0 0 1000 490"';
+    if (!source.includes(expectedViewBox) || !source.includes("fifty-three-week")) {
+      fail(relativePath + " is stale or does not contain the full 53-week flight recorder.");
+    }
+  }
 }
 
-async function validateGif(relativePath) {
+function readUInt24LE(source, offset) {
+  return source[offset] | (source[offset + 1] << 8) | (source[offset + 2] << 16);
+}
+
+async function validateWebp(relativePath) {
   const source = await readFile(path.join(ROOT, relativePath));
-  const signature = source.subarray(0, 6).toString("ascii");
-  if (!["GIF87a", "GIF89a"].includes(signature)) {
-    fail(relativePath + " is not a valid GIF document.");
+  if (
+    source.subarray(0, 4).toString("ascii") !== "RIFF" ||
+    source.subarray(8, 12).toString("ascii") !== "WEBP"
+  ) {
+    fail(relativePath + " is not a valid WebP document.");
     return;
   }
-  const isMobileHero = relativePath.includes("hero-motion-mobile-");
-  const sizeBudget = isMobileHero ? 2 : 5;
-  if (source.length > sizeBudget * 1024 * 1024) {
-    fail(relativePath + " exceeds the " + sizeBudget + " MiB profile-motion budget.");
+  if (source.readUInt32LE(4) + 8 !== source.length) {
+    fail(relativePath + " has an invalid RIFF length.");
   }
-  const width = source.readUInt16LE(6);
-  const height = source.readUInt16LE(8);
-  const expectedWidth = isMobileHero ? 600 : 1000;
-  const expectedHeight = isMobileHero ? 252 : 420;
-  if (
-    relativePath.includes("hero-motion") &&
-    (width !== expectedWidth || height !== expectedHeight)
-  ) {
-    fail(relativePath + " must be " + expectedWidth + " by " + expectedHeight + " pixels.");
+  const isMobileHero = relativePath.includes("hero-motion-mobile-");
+  const sizeBudget = isMobileHero ? 750 * 1024 : 2 * 1024 * 1024;
+  if (source.length > sizeBudget) {
+    fail(relativePath + " exceeds its lossless WebP motion budget.");
   }
 
-  const graphicControl = Buffer.from([0x21, 0xf9, 0x04]);
+  let width = null;
+  let height = null;
   let frames = 0;
-  let offset = 0;
-  while ((offset = source.indexOf(graphicControl, offset)) >= 0) {
-    frames += 1;
-    offset += graphicControl.length;
+  let animationFlag = false;
+  let animationHeader = false;
+  let infiniteLoop = false;
+  let malformedChunk = false;
+  let offset = 12;
+  while (offset + 8 <= source.length) {
+    const type = source.subarray(offset, offset + 4).toString("ascii");
+    const chunkSize = source.readUInt32LE(offset + 4);
+    const dataOffset = offset + 8;
+    const chunkEnd = dataOffset + chunkSize;
+    if (chunkEnd > source.length) {
+      malformedChunk = true;
+      break;
+    }
+    if (type === "VP8X" && chunkSize >= 10) {
+      animationFlag = (source[dataOffset] & 0x02) !== 0;
+      width = readUInt24LE(source, dataOffset + 4) + 1;
+      height = readUInt24LE(source, dataOffset + 7) + 1;
+    }
+    if (type === "ANIM" && chunkSize >= 6) {
+      animationHeader = true;
+      infiniteLoop = source.readUInt16LE(dataOffset + 4) === 0;
+    }
+    if (type === "ANMF") {
+      frames += 1;
+      if (chunkSize < 24) {
+        malformedChunk = true;
+      } else {
+        const duration = readUInt24LE(source, dataOffset + 12);
+        if (duration !== 188) {
+          fail(relativePath + " frame " + frames + " must last exactly 188 ms.");
+        }
+        let frameOffset = dataOffset + 16;
+        let losslessFrame = false;
+        while (frameOffset + 8 <= chunkEnd) {
+          const frameType = source.subarray(frameOffset, frameOffset + 4).toString("ascii");
+          const frameSize = source.readUInt32LE(frameOffset + 4);
+          const frameEnd = frameOffset + 8 + frameSize;
+          if (frameEnd > chunkEnd) {
+            malformedChunk = true;
+            break;
+          }
+          if (frameType === "VP8L") losslessFrame = true;
+          frameOffset = frameEnd + (frameSize % 2);
+        }
+        if (!losslessFrame) {
+          fail(relativePath + " frame " + frames + " is not lossless VP8L.");
+        }
+      }
+    }
+    offset = dataOffset + chunkSize + (chunkSize % 2);
   }
-  if (frames < 2) fail(relativePath + " is not animated.");
+  if (malformedChunk || offset !== source.length) {
+    fail(relativePath + " contains a malformed WebP chunk boundary.");
+  }
+
+  const expectedWidth = isMobileHero ? 900 : 1800;
+  const expectedHeight = isMobileHero ? 378 : 756;
+  if (width !== expectedWidth || height !== expectedHeight) {
+    fail(relativePath + " must be " + expectedWidth + " by " + expectedHeight + " pixels.");
+  }
+  if (!animationFlag || !animationHeader) {
+    fail(relativePath + " is missing WebP animation metadata.");
+  }
+  if (!infiniteLoop) fail(relativePath + " must loop continuously.");
+  if (frames !== 32) fail(relativePath + " must contain exactly 32 animation frames.");
 }
 
 async function checkUrl(url) {
@@ -230,13 +320,17 @@ async function main() {
   if (await exists("assets")) {
     const assetFiles = await readdir(path.join(ROOT, "assets"));
     const svgFiles = assetFiles.filter((name) => name.toLowerCase().endsWith(".svg")).sort();
+    const webpFiles = assetFiles.filter((name) => name.toLowerCase().endsWith(".webp")).sort();
     const gifFiles = assetFiles.filter((name) => name.toLowerCase().endsWith(".gif")).sort();
     for (const name of svgFiles) await validateSvg(path.join("assets", name));
-    for (const name of gifFiles) await validateGif(path.join("assets", name));
+    for (const name of webpFiles) await validateWebp(path.join("assets", name));
+    if (gifFiles.length > 0) {
+      fail("Obsolete palette GIF assets remain: " + gifFiles.join(", ") + ".");
+    }
   }
 
   const checkedText = [readme];
-  for (const relativePath of REQUIRED_FILES.filter((item) => !/\.(?:svg|gif)$/i.test(item) && item !== "README.md")) {
+  for (const relativePath of REQUIRED_FILES.filter((item) => !/\.(?:svg|webp)$/i.test(item) && item !== "README.md")) {
     if (await exists(relativePath)) checkedText.push(await readFile(path.join(ROOT, relativePath), "utf8"));
   }
   const combined = checkedText.join("\n");

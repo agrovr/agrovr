@@ -1,7 +1,7 @@
-"""Generate the repository-owned light/dark Orbital Systems Atlas hero GIFs.
+"""Generate the repository-owned light/dark Orbital Systems Atlas motion assets.
 
-This script is intentionally not part of the daily profile workflow. The GIFs are
-brand artwork, while the activity tracker is the only data-driven visual.
+This script is intentionally not part of the daily profile workflow. The WebP files
+are brand artwork, while the activity tracker is the only data-driven visual.
 """
 
 from __future__ import annotations
@@ -14,7 +14,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH, HEIGHT = 1000, 420
-MOBILE_WIDTH, MOBILE_HEIGHT = 600, 252
+HD_WIDTH, HD_HEIGHT = 1800, 756
+HD_MOBILE_WIDTH, HD_MOBILE_HEIGHT = 900, 378
 SCALE = 2
 FRAMES = 32
 FRAME_DURATION_MS = 188
@@ -205,7 +206,12 @@ def make_base(theme_name: str) -> Image.Image:
     return image
 
 
-def add_motion(base: Image.Image, theme_name: str, frame: int) -> Image.Image:
+def add_motion(
+    base: Image.Image,
+    theme_name: str,
+    frame: int,
+    output_size: tuple[int, int] = (WIDTH, HEIGHT),
+) -> Image.Image:
     theme = THEMES[theme_name]
     phase = math.tau * frame / FRAMES
     image = base.copy()
@@ -265,45 +271,45 @@ def add_motion(base: Image.Image, theme_name: str, frame: int) -> Image.Image:
         )
 
     image = Image.alpha_composite(image, motion)
-    return image.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS).convert("RGB")
+    if image.size != output_size:
+        image = image.resize(output_size, Image.Resampling.LANCZOS)
+    return image.convert("RGB")
 
 
-def save_gif(frames: list[Image.Image], destination: Path, *, colors: int) -> Path:
-    palette = frames[0].quantize(colors=colors, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-    paletted = [
-        frame.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG) for frame in frames
-    ]
+def save_webp(frames: list[Image.Image], destination: Path) -> Path:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    paletted[0].save(
+    frames[0].save(
         destination,
         save_all=True,
-        append_images=paletted[1:],
+        append_images=frames[1:],
         duration=FRAME_DURATION_MS,
         loop=0,
-        disposal=2,
-        optimize=True,
+        format="WEBP",
+        lossless=True,
+        method=4,
     )
     return destination
 
 
 def generate(theme_name: str) -> list[Path]:
     base = make_base(theme_name)
-    frames = [add_motion(base, theme_name, frame) for frame in range(FRAMES)]
-    desktop = save_gif(
-        frames,
-        ROOT / "assets" / f"hero-motion-{theme_name}.gif",
-        colors=48,
+    hd_frames: list[Image.Image] = []
+    hd_mobile_frames: list[Image.Image] = []
+    for frame in range(FRAMES):
+        source = add_motion(base, theme_name, frame, base.size)
+        hd_frames.append(source.resize((HD_WIDTH, HD_HEIGHT), Image.Resampling.LANCZOS))
+        hd_mobile_frames.append(
+            source.resize((HD_MOBILE_WIDTH, HD_MOBILE_HEIGHT), Image.Resampling.LANCZOS)
+        )
+    hd = save_webp(
+        hd_frames,
+        ROOT / "assets" / f"hero-motion-{theme_name}.webp",
     )
-    mobile_frames = [
-        frame.resize((MOBILE_WIDTH, MOBILE_HEIGHT), Image.Resampling.LANCZOS)
-        for frame in frames
-    ]
-    mobile = save_gif(
-        mobile_frames,
-        ROOT / "assets" / f"hero-motion-mobile-{theme_name}.gif",
-        colors=40,
+    hd_mobile = save_webp(
+        hd_mobile_frames,
+        ROOT / "assets" / f"hero-motion-mobile-{theme_name}.webp",
     )
-    return [desktop, mobile]
+    return [hd, hd_mobile]
 
 
 if __name__ == "__main__":
