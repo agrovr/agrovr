@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" role="img" aria-labelledby="activity-title activity-desc">
   <title id="activity-title">Activity constellation</title>
-  <desc id="activity-desc">A twelve-week constellation of publicly visible GitHub contribution days, with 776 contributions across 43 active days in the trailing year, a current signal of 6 days, and a longest signal of 29 days.</desc>
+  <desc id="activity-desc">A twelve-week constellation of publicly visible GitHub contribution days, with 776 contributions across 44 active days in the trailing year, a current signal of 6 days, and a longest signal of 29 days.</desc>
   <defs>
     <pattern id="activity-grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M32 0H0V32" fill="none" stroke="#aa8dcb" stroke-width="0.65" opacity="0.1"/>
@@ -357,7 +357,7 @@
   <text x="700" y="178" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#c8b8dc">LONGEST ARC / 365D</text>
   <text x="700" y="213" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#f4eefb">29 DAYS</text>
   <text x="700" y="241" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#c8b8dc">ACTIVE DAYS / 365D</text>
-  <text x="700" y="276" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#f4eefb">43 / 365</text>
+  <text x="700" y="276" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#f4eefb">44 / 365</text>
   <text x="700" y="304" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#c8b8dc">CONTRIBUTIONS / 365D</text>
   <text x="700" y="339" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#f4eefb">776</text>
   <circle cx="50" cy="373" r="4" fill="#f2a45b"/>

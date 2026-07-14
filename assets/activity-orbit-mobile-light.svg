@@ -356,7 +356,7 @@
   <text x="326" y="500" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">LONGEST ARC / 365D</text>
   <text x="326" y="535" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">29 DAYS</text>
   <text x="48" y="602" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">ACTIVE DAYS / 365D</text>
-  <text x="48" y="637" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">43 / 365</text>
+  <text x="48" y="637" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">44 / 365</text>
   <text x="326" y="602" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1.2" fill="#5b496d">CONTRIBUTIONS / 365D</text>
   <text x="326" y="637" text-anchor="start" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="#261b32">776</text>
   <circle cx="40" cy="683" r="5" fill="#b45f1e"/>
