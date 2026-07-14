@@ -1,3 +1,4 @@
+<a href="https://agrover7.com/">
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
@@ -7,15 +8,16 @@
   <source type="image/webp" media="(prefers-color-scheme: light)" srcset="./assets/hero-motion-light.webp">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img src="./assets/hero-light.svg" alt="Ashmit Grover's Orbital Systems Atlas connecting AI products, research agents, and cloud systems" width="100%">
+  <img src="./assets/hero-light.svg" alt="Enter Ashmit Grover's interactive Orbital Systems Atlas for AI products, research agents, and cloud systems" width="100%">
 </picture>
+</a>
 
 <h1 align="center">Ashmit Grover</h1>
 
 <p align="center">
-  <strong><a href="https://agrover7.com/">View portfolio</a></strong> ·
+  <strong><a href="https://agrover7.com/">Enter the interactive atlas</a></strong> ·
   <a href="https://www.linkedin.com/in/agrover7/">LinkedIn</a> ·
-  <a href="https://agrover7.com/#contact">Open a transmission</a>
+  <a href="https://github.com/agrovr/agrovr/issues/new?template=transmission.yml">Open a GitHub transmission</a>
 </p>
 
 ## Mission control
@@ -26,24 +28,28 @@ I turn ambiguous workflows into dependable AI products—designing the interface
 - **Intelligence layer** — agent orchestration, research flows, evaluation, and APIs.
 - **Systems layer** — containerized services, Kubernetes delivery, monitoring, and production checks.
 
-## Project constellations
+## Choose your orbit
+
+Pick a route, then reveal its system map and flight plan.
 
 ### RoleForge AI · Trajectory engine
 
-<a href="https://github.com/agrovr/roleforge-ai">
+[RoleForge AI](https://github.com/agrovr/roleforge-ai) turns a source resume and target role into structured fit analysis, gap guidance, tailored documents, interview preparation, and exportable artifacts. Its public frontend includes authentication, saved projects, entitlement flows, theme support, and production smoke coverage.
+
+**[Launch the product →](https://roleforgeai.vercel.app/)** · [Inspect the source](https://github.com/agrovr/roleforge-ai)
+
+<details>
+<summary><strong>Reveal the RoleForge system map</strong></summary>
+
+<br>
+
+<a href="https://roleforgeai.vercel.app/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/roleforge-mission-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/roleforge-mission-light.svg">
   <img src="./assets/roleforge-mission-light.svg" alt="RoleForge AI mission path from a source resume and target role through analysis, guidance, preparation, and export" width="100%">
 </picture>
 </a>
-
-[RoleForge AI](https://github.com/agrovr/roleforge-ai) is an AI-assisted resume workflow that turns a source resume and target role into structured fit analysis, gap guidance, tailored documents, interview preparation, and exportable artifacts. Its public frontend is built with Next.js, React, and TypeScript, with authentication, saved projects, entitlement flows, theme support, and production smoke coverage.
-
-**[Launch RoleForge AI](https://roleforgeai.vercel.app/) · [Explore the source](https://github.com/agrovr/roleforge-ai)**
-
-<details>
-<summary><strong>Open mission telemetry</strong></summary>
 
 #### Flight plan
 
@@ -60,6 +66,15 @@ I turn ambiguous workflows into dependable AI products—designing the interface
 
 ### KubeResearch AIQ · Distributed research constellation
 
+[KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) is a Kubernetes-native research-agent platform inspired by NVIDIA AI-Q. A FastAPI control plane coordinates queued workers and persistent state while a React dashboard exposes research runs. Helm, Argo CD, Prometheus, autoscaling, and network-policy resources make the architecture operable—not just diagrammable.
+
+**[Explore the repository →](https://github.com/agrovr/kube-research-aiq)**
+
+<details>
+<summary><strong>Reveal the KubeResearch system map</strong></summary>
+
+<br>
+
 <a href="https://github.com/agrovr/kube-research-aiq">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/kuberesearch-mission-dark.svg">
@@ -67,13 +82,6 @@ I turn ambiguous workflows into dependable AI products—designing the interface
   <img src="./assets/kuberesearch-mission-light.svg" alt="KubeResearch AIQ architecture showing a research query moving through an API, queue, distributed workers, and report" width="100%">
 </picture>
 </a>
-
-[KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) is a Kubernetes-native research-agent platform inspired by NVIDIA AI-Q. A FastAPI control plane coordinates queued workers and persistent state while a React dashboard exposes research runs. Helm, Argo CD, Prometheus, autoscaling, and network-policy resources make the architecture operable—not just diagrammable.
-
-**[Explore the source](https://github.com/agrovr/kube-research-aiq)**
-
-<details>
-<summary><strong>Open mission telemetry</strong></summary>
 
 #### Flight plan
 
@@ -90,38 +98,17 @@ This is an independent project inspired by NVIDIA AI-Q; it is not affiliated wit
 
 </details>
 
-## Activity constellation
+## Open a transmission
 
-<a href="https://github.com/agrovr?tab=overview">
-  <picture>
-    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/activity-orbit-mobile-dark.svg">
-    <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/activity-orbit-mobile-light.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-orbit-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/activity-orbit-light.svg">
-    <img src="./assets/activity-orbit-light.svg" alt="Fifty-three-week activity constellation with current and longest GitHub contribution signals measured over the trailing year" width="100%">
-  </picture>
-</a>
+Ask a question, leave useful feedback, or explore collaboration through a structured GitHub form. The conversation continues in a real public thread, so it is easy to follow up.
 
-<!-- activity-summary:start -->
-**Signal summary:** **778 publicly visible contributions** across **44 active days** in the last 365 days · **6-day current signal** · **29-day longest arc** · through **2026-07-14 UTC**.
-<!-- activity-summary:end -->
+**[Start a GitHub transmission →](https://github.com/agrovr/agrovr/issues/new?template=transmission.yml)** · [Use the private contact channel](https://agrover7.com/#contact)
 
-<details>
-<summary><strong>Decode the activity signal</strong></summary>
+<sub>GitHub transmissions are public. Do not include private, sensitive, or secret information.</sub>
 
-- Each star is one UTC day in the fifty-three-week flight recorder; size reflects GitHub's relative contribution level.
-- Current signal, longest arc, active days, and contribution count use the trailing 365-day calendar visible to the repository workflow.
-- A current signal may end yesterday so an unfinished UTC day does not break the streak.
-- The atlas refreshes from GitHub's own GraphQL contribution calendar. It requests no private repository names and uses no streak service, visitor counter, or remotely hosted widget.
-- The hero's slow acquisition loop is a repository-owned lossless WebP. Visitors who prefer reduced motion receive the static vector atlas instead.
+## Public mission status
 
-**[Open the native contribution log](https://github.com/agrovr?tab=overview)**
-
-</details>
-
-## Recent transmissions
-
-Two public mission signals, refreshed daily from GitHub without a visitor counter or external profile widget.
+Two public systems, refreshed daily from GitHub without an external profile widget.
 
 <!-- transmission-summary:start -->
 | Mission | Primary language | Last public push |
@@ -140,8 +127,8 @@ Two public mission signals, refreshed daily from GitHub without a visitor counte
 
 </details>
 
-## Open transmission
+## Ground station
 
-Want to compare notes, build something useful, or send an interesting problem into orbit? Visit [agrover7.com](https://agrover7.com/) or [open a transmission](https://agrover7.com/#contact).
+Run the full interactive constellation at [agrover7.com](https://agrover7.com/) or connect on [LinkedIn](https://www.linkedin.com/in/agrover7/).
 
 <p align="center"><sub>signal from <a href="https://agrover7.com/">ash.</a> · all stars reserved ✦</sub></p>

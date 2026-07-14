@@ -1,0 +1,58 @@
+name: Open a transmission
+description: Ask about a system, leave useful feedback, or explore collaboration.
+title: "[transmission] "
+labels:
+  - transmission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out. This issue is public, so do not include private, sensitive, or secret information.
+
+  - type: dropdown
+    id: intent
+    attributes:
+      label: What kind of transmission is this?
+      options:
+        - Technical question
+        - Product feedback
+        - Collaboration idea
+        - Something else
+    validations:
+      required: true
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: Which system is this about?
+      options:
+        - RoleForge AI
+        - KubeResearch AIQ
+        - Portfolio / profile
+        - Another project
+    validations:
+      required: true
+
+  - type: textarea
+    id: signal
+    attributes:
+      label: Your transmission
+      description: Share the question, feedback, idea, or useful context.
+      placeholder: What would you like to explore?
+    validations:
+      required: true
+
+  - type: input
+    id: reference
+    attributes:
+      label: Relevant link
+      description: Optional repository, page, screenshot, or reference.
+      placeholder: https://
+
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Public-content confirmation
+      options:
+        - label: I understand this transmission will be publicly visible on GitHub.
+          required: true

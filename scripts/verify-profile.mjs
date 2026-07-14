@@ -17,10 +17,6 @@ const REQUIRED_FILES = [
   "assets/roleforge-mission-dark.svg",
   "assets/kuberesearch-mission-light.svg",
   "assets/kuberesearch-mission-dark.svg",
-  "assets/activity-orbit-light.svg",
-  "assets/activity-orbit-dark.svg",
-  "assets/activity-orbit-mobile-light.svg",
-  "assets/activity-orbit-mobile-dark.svg",
   "scripts/generate-profile.mjs",
   "scripts/profile-core.mjs",
   "scripts/profile-core.test.mjs",
@@ -29,6 +25,15 @@ const REQUIRED_FILES = [
   "requirements-motion.txt",
   ".github/workflows/profile.yml",
   ".github/dependabot.yml",
+  ".github/ISSUE_TEMPLATE/transmission.yml",
+  ".github/ISSUE_TEMPLATE/config.yml",
+];
+
+const OBSOLETE_ACTIVITY_FILES = [
+  "assets/activity-orbit-light.svg",
+  "assets/activity-orbit-dark.svg",
+  "assets/activity-orbit-mobile-light.svg",
+  "assets/activity-orbit-mobile-dark.svg",
 ];
 
 const UNRELIABLE_WIDGETS = [
@@ -122,8 +127,6 @@ async function validateReadme(readme) {
   }
 
   for (const marker of [
-    "<!-- activity-summary:start -->",
-    "<!-- activity-summary:end -->",
     "<!-- transmission-summary:start -->",
     "<!-- transmission-summary:end -->",
   ]) {
@@ -131,8 +134,20 @@ async function validateReadme(readme) {
       fail("README must contain exactly one " + marker + " marker.");
     }
   }
-  if (!readme.includes("Decode the activity signal")) {
-    fail("README is missing the accessible activity-signal explanation.");
+  if (/Activity constellation|activity-orbit-|activity-summary:/i.test(readme)) {
+    fail("README still contains the removed activity constellation.");
+  }
+  if (!readme.includes("## Choose your orbit") || (readme.match(/<details>/g) || []).length < 3) {
+    fail("README is missing the interactive orbit controls.");
+  }
+  if (!readme.includes("issues/new?template=transmission.yml")) {
+    fail("README is missing the GitHub transmission form control.");
+  }
+  if (!/GitHub transmissions are public/i.test(readme)) {
+    fail("README must clearly state that GitHub transmissions are public.");
+  }
+  if (!/<a href="https:\/\/agrover7\.com\/">\s*<picture>/i.test(readme)) {
+    fail("README hero must link to the interactive portfolio.");
   }
   if (!readme.includes("prefers-reduced-motion: reduce")) {
     fail("README is missing the static reduced-motion hero fallback.");
@@ -172,12 +187,24 @@ async function validateSvg(relativePath) {
     if (rule.pattern.test(source)) fail(relativePath + " contains forbidden " + rule.label + " content.");
   }
 
-  if (relativePath.includes("activity-orbit-")) {
-    const isMobile = relativePath.includes("activity-orbit-mobile-");
-    const expectedViewBox = isMobile ? 'viewBox="0 0 600 720"' : 'viewBox="0 0 1000 490"';
-    if (!source.includes(expectedViewBox) || !source.includes("fifty-three-week")) {
-      fail(relativePath + " is stale or does not contain the full 53-week flight recorder.");
-    }
+}
+
+async function validateIssueForm() {
+  const relativePath = path.join(".github", "ISSUE_TEMPLATE", "transmission.yml");
+  if (!(await exists(relativePath))) return;
+  const source = await readFile(path.join(ROOT, relativePath), "utf8");
+  for (const token of [
+    "labels:\n  - transmission",
+    "id: intent",
+    "id: system",
+    "id: signal",
+    "id: public",
+    "required: true",
+  ]) {
+    if (!source.includes(token)) fail("Transmission issue form is missing: " + token + ".");
+  }
+  if (!/issue is public[\s\S]+do not include private/i.test(source)) {
+    fail("Transmission issue form must warn visitors that submissions are public.");
   }
 }
 
@@ -309,6 +336,9 @@ async function main() {
   for (const relativePath of REQUIRED_FILES) {
     if (!(await exists(relativePath))) fail("Required file is missing: " + relativePath);
   }
+  for (const relativePath of OBSOLETE_ACTIVITY_FILES) {
+    if (await exists(relativePath)) fail("Removed activity asset still exists: " + relativePath);
+  }
 
   if (!(await exists("README.md"))) {
     throw new Error("README.md is required before verification can continue.");
@@ -316,6 +346,7 @@ async function main() {
 
   const readme = await readFile(path.join(ROOT, "README.md"), "utf8");
   await validateReadme(readme);
+  await validateIssueForm();
 
   if (await exists("assets")) {
     const assetFiles = await readdir(path.join(ROOT, "assets"));
