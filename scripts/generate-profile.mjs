@@ -3,6 +3,7 @@ import path from "node:path";
 import {
   THEMES,
   activityWindow,
+  assertTrustedActivityContext,
   buildActivityModel,
   escapeXml,
   renderActivityOrbit,
@@ -99,6 +100,8 @@ async function fetchContributionCalendar(reference) {
     );
     return fixture.contributionCalendar || fixture;
   }
+
+  assertTrustedActivityContext(process.env, OWNER + "/" + OWNER);
 
   if (!process.env.GITHUB_TOKEN) {
     throw new Error(

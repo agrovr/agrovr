@@ -3,6 +3,22 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 export const ACTIVITY_DAYS = 365;
 export const RECENT_WEEKS = 12;
 
+export function assertTrustedActivityContext(
+  environment,
+  expectedRepository = "agrovr/agrovr",
+) {
+  if (
+    environment.GITHUB_ACTIONS !== "true" ||
+    environment.GITHUB_REPOSITORY !== expectedRepository
+  ) {
+    throw new Error(
+      "Live contribution generation is restricted to the " +
+        expectedRepository +
+        " GitHub Actions context. Use PROFILE_ACTIVITY_FIXTURE for local rendering.",
+    );
+  }
+}
+
 export const THEMES = {
   light: {
     background: "#f5f0e7",

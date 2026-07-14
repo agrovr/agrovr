@@ -11,6 +11,8 @@ const REQUIRED_FILES = [
   "assets/hero-dark.svg",
   "assets/hero-motion-light.gif",
   "assets/hero-motion-dark.gif",
+  "assets/hero-motion-mobile-light.gif",
+  "assets/hero-motion-mobile-dark.gif",
   "assets/roleforge-mission-light.svg",
   "assets/roleforge-mission-dark.svg",
   "assets/kuberesearch-mission-light.svg",
@@ -156,13 +158,20 @@ async function validateGif(relativePath) {
     fail(relativePath + " is not a valid GIF document.");
     return;
   }
-  if (source.length > 5 * 1024 * 1024) {
-    fail(relativePath + " exceeds the 5 MiB profile-motion budget.");
+  const isMobileHero = relativePath.includes("hero-motion-mobile-");
+  const sizeBudget = isMobileHero ? 2 : 5;
+  if (source.length > sizeBudget * 1024 * 1024) {
+    fail(relativePath + " exceeds the " + sizeBudget + " MiB profile-motion budget.");
   }
   const width = source.readUInt16LE(6);
   const height = source.readUInt16LE(8);
-  if (relativePath.includes("hero-motion") && (width !== 1000 || height !== 420)) {
-    fail(relativePath + " must be 1000 by 420 pixels.");
+  const expectedWidth = isMobileHero ? 600 : 1000;
+  const expectedHeight = isMobileHero ? 252 : 420;
+  if (
+    relativePath.includes("hero-motion") &&
+    (width !== expectedWidth || height !== expectedHeight)
+  ) {
+    fail(relativePath + " must be " + expectedWidth + " by " + expectedHeight + " pixels.");
   }
 
   const graphicControl = Buffer.from([0x21, 0xf9, 0x04]);

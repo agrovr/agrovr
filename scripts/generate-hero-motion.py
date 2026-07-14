@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH, HEIGHT = 1000, 420
+MOBILE_WIDTH, MOBILE_HEIGHT = 600, 252
 SCALE = 2
 FRAMES = 32
 FRAME_DURATION_MS = 188
@@ -267,14 +268,11 @@ def add_motion(base: Image.Image, theme_name: str, frame: int) -> Image.Image:
     return image.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS).convert("RGB")
 
 
-def generate(theme_name: str) -> Path:
-    base = make_base(theme_name)
-    frames = [add_motion(base, theme_name, frame) for frame in range(FRAMES)]
-    palette = frames[0].quantize(colors=48, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+def save_gif(frames: list[Image.Image], destination: Path, *, colors: int) -> Path:
+    palette = frames[0].quantize(colors=colors, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
     paletted = [
         frame.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG) for frame in frames
     ]
-    destination = ROOT / "assets" / f"hero-motion-{theme_name}.gif"
     destination.parent.mkdir(parents=True, exist_ok=True)
     paletted[0].save(
         destination,
@@ -288,7 +286,27 @@ def generate(theme_name: str) -> Path:
     return destination
 
 
+def generate(theme_name: str) -> list[Path]:
+    base = make_base(theme_name)
+    frames = [add_motion(base, theme_name, frame) for frame in range(FRAMES)]
+    desktop = save_gif(
+        frames,
+        ROOT / "assets" / f"hero-motion-{theme_name}.gif",
+        colors=48,
+    )
+    mobile_frames = [
+        frame.resize((MOBILE_WIDTH, MOBILE_HEIGHT), Image.Resampling.LANCZOS)
+        for frame in frames
+    ]
+    mobile = save_gif(
+        mobile_frames,
+        ROOT / "assets" / f"hero-motion-mobile-{theme_name}.gif",
+        colors=40,
+    )
+    return [desktop, mobile]
+
+
 if __name__ == "__main__":
     for theme in ("light", "dark"):
-        output = generate(theme)
-        print(f"Generated {output.relative_to(ROOT)} ({output.stat().st_size:,} bytes)")
+        for output in generate(theme):
+            print(f"Generated {output.relative_to(ROOT)} ({output.stat().st_size:,} bytes)")

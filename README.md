@@ -1,4 +1,6 @@
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/hero-motion-mobile-dark.gif">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-motion-mobile-light.gif">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-motion-dark.gif">
   <source media="(prefers-color-scheme: light)" srcset="./assets/hero-motion-light.gif">
   <img src="./assets/hero-motion-light.gif" alt="Ashmit Grover's animated Orbital Systems Atlas, charting AI products, research agents, and cloud systems" width="100%">

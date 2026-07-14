@@ -40,7 +40,7 @@ jobs:
           node scripts/verify-profile.mjs
 
   update-telemetry:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/')
     runs-on: ubuntu-latest
     timeout-minutes: 8
     permissions:
@@ -86,4 +86,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- README.md assets/orbital-telemetry-light.svg assets/orbital-telemetry-dark.svg assets/activity-orbit-light.svg assets/activity-orbit-dark.svg assets/activity-orbit-mobile-light.svg assets/activity-orbit-mobile-dark.svg
           git commit -m "Update orbital signals"
-          git push origin "HEAD:$TARGET_BRANCH"
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"

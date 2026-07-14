@@ -4,6 +4,7 @@ import {
   ACTIVITY_DAYS,
   activitySummary,
   activityWindow,
+  assertTrustedActivityContext,
   buildActivityModel,
   renderActivityOrbit,
   replaceActivitySummary,
@@ -25,6 +26,31 @@ function fixture(reference, countForIndex = () => 0) {
   });
   return { totalContributions: days.reduce((sum, day) => sum + day.contributionCount, 0), weeks: [{ contributionDays: days }] };
 }
+
+test("live activity generation is restricted to the profile repository workflow", () => {
+  assert.doesNotThrow(() =>
+    assertTrustedActivityContext({
+      GITHUB_ACTIONS: "true",
+      GITHUB_REPOSITORY: "agrovr/agrovr",
+    }),
+  );
+  assert.throws(
+    () =>
+      assertTrustedActivityContext({
+        GITHUB_ACTIONS: "false",
+        GITHUB_REPOSITORY: "agrovr/agrovr",
+      }),
+    /restricted.*GitHub Actions context/i,
+  );
+  assert.throws(
+    () =>
+      assertTrustedActivityContext({
+        GITHUB_ACTIONS: "true",
+        GITHUB_REPOSITORY: "someone/else",
+      }),
+    /restricted.*GitHub Actions context/i,
+  );
+});
 
 test("activity window is a deterministic trailing 365-day UTC range", () => {
   const window = activityWindow("2024-03-01T19:00:00-06:00");
