@@ -1,28 +1,26 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/hero-motion-mobile-dark.gif">
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-motion-mobile-light.gif">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-motion-dark.gif">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-motion-light.gif">
-  <img src="./assets/hero-motion-light.gif" alt="Ashmit Grover's animated Orbital Systems Atlas, charting AI products, research agents, and cloud systems" width="100%">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+  <source type="image/webp" media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/hero-motion-mobile-dark.webp">
+  <source type="image/webp" media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-motion-mobile-light.webp">
+  <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="./assets/hero-motion-dark.webp">
+  <source type="image/webp" media="(prefers-color-scheme: light)" srcset="./assets/hero-motion-light.webp">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+  <img src="./assets/hero-light.svg" alt="Ashmit Grover's Orbital Systems Atlas connecting AI products, research agents, and cloud systems" width="100%">
 </picture>
 
 <h1 align="center">Ashmit Grover</h1>
 
 <p align="center">
-  <strong>I build AI products and the cloud-native systems that carry them from idea to production.</strong><br>
-  Useful things, weird things, and the infrastructure that lets both survive contact with reality.
-</p>
-
-<p align="center">
-  <a href="https://agrover7.com/">Portfolio</a> ·
+  <strong><a href="https://agrover7.com/">View portfolio</a></strong> ·
   <a href="https://www.linkedin.com/in/agrover7/">LinkedIn</a> ·
-  <a href="https://github.com/agrovr">GitHub</a> ·
   <a href="https://agrover7.com/#contact">Open a transmission</a>
 </p>
 
 ## Mission control
 
-My work sits where product decisions meet system design: shaping an ambiguous workflow into an interface people can use, then building the APIs, agents, and cloud infrastructure that keep it dependable.
+I turn ambiguous workflows into dependable AI products—designing the interface, intelligence layer, and cloud systems as one connected mission.
 
 - **Product layer** — clear AI-assisted workflows with useful human checkpoints.
 - **Intelligence layer** — agent orchestration, research flows, evaluation, and APIs.
@@ -32,11 +30,13 @@ My work sits where product decisions meet system design: shaping an ambiguous wo
 
 ### RoleForge AI · Trajectory engine
 
+<a href="https://github.com/agrovr/roleforge-ai">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/roleforge-mission-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/roleforge-mission-light.svg">
   <img src="./assets/roleforge-mission-light.svg" alt="RoleForge AI mission path from a source resume and target role through analysis, guidance, preparation, and export" width="100%">
 </picture>
+</a>
 
 [RoleForge AI](https://github.com/agrovr/roleforge-ai) is an AI-assisted resume workflow that turns a source resume and target role into structured fit analysis, gap guidance, tailored documents, interview preparation, and exportable artifacts. Its public frontend is built with Next.js, React, and TypeScript, with authentication, saved projects, entitlement flows, theme support, and production smoke coverage.
 
@@ -60,11 +60,13 @@ My work sits where product decisions meet system design: shaping an ambiguous wo
 
 ### KubeResearch AIQ · Distributed research constellation
 
+<a href="https://github.com/agrovr/kube-research-aiq">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/kuberesearch-mission-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/kuberesearch-mission-light.svg">
   <img src="./assets/kuberesearch-mission-light.svg" alt="KubeResearch AIQ architecture showing a research query moving through an API, queue, distributed workers, and report" width="100%">
 </picture>
+</a>
 
 [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) is a Kubernetes-native research-agent platform inspired by NVIDIA AI-Q. A FastAPI control plane coordinates queued workers and persistent state while a React dashboard exposes research runs. Helm, Argo CD, Prometheus, autoscaling, and network-policy resources make the architecture operable—not just diagrammable.
 
@@ -96,7 +98,7 @@ This is an independent project inspired by NVIDIA AI-Q; it is not affiliated wit
     <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/activity-orbit-mobile-light.svg">
     <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-orbit-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/activity-orbit-light.svg">
-    <img src="./assets/activity-orbit-light.svg" alt="Twelve-week activity constellation with current and longest GitHub contribution signals measured over the trailing year" width="100%">
+    <img src="./assets/activity-orbit-light.svg" alt="Fifty-three-week activity constellation with current and longest GitHub contribution signals measured over the trailing year" width="100%">
   </picture>
 </a>
 
@@ -107,37 +109,36 @@ This is an independent project inspired by NVIDIA AI-Q; it is not affiliated wit
 <details>
 <summary><strong>Decode the activity signal</strong></summary>
 
-- Each star is one UTC day in the latest twelve-week flight path; size reflects GitHub's relative contribution level.
+- Each star is one UTC day in the fifty-three-week flight recorder; size reflects GitHub's relative contribution level.
 - Current signal, longest arc, active days, and contribution count use the trailing 365-day calendar visible to the repository workflow.
 - A current signal may end yesterday so an unfinished UTC day does not break the streak.
 - The atlas refreshes from GitHub's own GraphQL contribution calendar. It requests no private repository names and uses no streak service, visitor counter, or remotely hosted widget.
-- The hero's slow acquisition loop is a repository-owned GIF, so GitHub's animated-image and reduced-motion preferences remain in control.
+- The hero's slow acquisition loop is a repository-owned lossless WebP. Visitors who prefer reduced motion receive the static vector atlas instead.
 
 **[Open the native contribution log](https://github.com/agrovr?tab=overview)**
 
 </details>
 
-## Orbital telemetry
+## Recent transmissions
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/orbital-telemetry-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/orbital-telemetry-light.svg">
-  <img src="./assets/orbital-telemetry-light.svg" alt="Public repository telemetry for RoleForge AI and KubeResearch AIQ, including primary language and latest public push date" width="100%">
-</picture>
+Two public mission signals, refreshed daily from GitHub without a visitor counter or external profile widget.
 
-This first-party chart tracks the primary language and latest public push date of the two flagship repositories. It is generated in this repository from public GitHub data, with no visitor counter or external profile-widget service.
+<!-- transmission-summary:start -->
+| Mission | Primary language | Last public push |
+| :-- | :-- | --: |
+| [RoleForge AI](https://github.com/agrovr/roleforge-ai) | TypeScript | `2026-07-14` |
+| [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-04-23` |
+<!-- transmission-summary:end -->
 
-## Flight systems
+## Mission archive
 
-- **AI product engineering** — turning model capabilities into understandable workflows, controls, and useful outputs.
-- **Agents and APIs** — designing service boundaries, orchestration paths, queues, and persistent state around AI work.
-- **Cloud-native delivery** — packaging applications with containers and operating them with Kubernetes-oriented tooling.
-- **Production reliability** — treating authentication, entitlements, observability, smoke tests, and failure paths as product work.
-
-## Early missions
+<details>
+<summary><strong>Open earlier missions</strong></summary>
 
 - **[Resume Tailor Backend](https://github.com/agrovr/resume-tailor-backend)** — a standalone FastAPI service for job-description analysis, compatibility scoring, Gemini-assisted tailoring, DOCX generation, and Docker/Cloud Run deployment.
 - **[CollegeProjects](https://github.com/agrovr/CollegeProjects)** — a C++ learning archive that includes a Key Management System and a Tamagotchi-style pet game.
+
+</details>
 
 ## Open transmission
 

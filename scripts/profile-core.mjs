@@ -1,7 +1,7 @@
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 export const ACTIVITY_DAYS = 365;
-export const RECENT_WEEKS = 12;
+export const DISPLAY_WEEKS = 53;
 
 export function assertTrustedActivityContext(
   environment,
@@ -224,39 +224,39 @@ export function buildActivityModel(calendar, reference = new Date()) {
       : [],
   );
 
-  const weekStart = addUtcDays(window.today, -window.today.getUTCDay());
-  const recentStart = addUtcDays(weekStart, -(RECENT_WEEKS - 1) * 7);
+  const yearStart = addUtcDays(window.first, -window.first.getUTCDay());
   const dayByDate = new Map(days.map((day) => [day.date, day]));
-  const recentDays = Array.from({ length: RECENT_WEEKS * 7 }, (_, index) => {
-    const dateObject = addUtcDays(recentStart, index);
+  const yearDays = Array.from({ length: DISPLAY_WEEKS * 7 }, (_, index) => {
+    const dateObject = addUtcDays(yearStart, index);
     const date = utcDate(dateObject);
     return (
       dayByDate.get(date) || {
         date,
         contributionCount: 0,
         contributionLevel: "NONE",
+        outside: true,
         future: dateObject > window.today,
       }
     );
   });
 
-  const monthLabels = [];
-  for (let week = 0; week < RECENT_WEEKS; week += 1) {
-    const date = addUtcDays(recentStart, week * 7);
+  const yearMonthLabels = [];
+  for (let week = 0; week < DISPLAY_WEEKS; week += 1) {
+    const date = addUtcDays(yearStart, week * 7);
     const month = formatMonth(date);
-    if (week === 0 || month !== monthLabels.at(-1)?.month) {
-      monthLabels.push({ week, month });
+    if (week === 0 || month !== yearMonthLabels.at(-1)?.month) {
+      yearMonthLabels.push({ week, month });
     }
   }
 
   return {
     days,
-    recentDays,
-    monthLabels,
+    yearDays,
+    yearMonthLabels,
     currentStreakDates,
     firstDate: days[0].date,
     throughDate: days.at(-1).date,
-    recentStartDate: utcDate(recentStart),
+    yearStartDate: utcDate(yearStart),
     totalContributions,
     activeDays,
     currentStreak: streaks.current,
@@ -281,17 +281,19 @@ function dayPosition(index, layout) {
 
 function renderDay(day, index, layout, colors, currentStreakDates, throughDate) {
   const { x, y } = dayPosition(index, layout);
-  const title =
-    day.date +
-    (day.future
-      ? ": future UTC day"
-      : ": " + day.contributionCount + " visible contribution" + (day.contributionCount === 1 ? "" : "s"));
+  const title = day.outside
+    ? day.date + (day.future ? ": future UTC day" : ": outside the trailing 365-day window")
+    : day.date +
+      ": " +
+      day.contributionCount +
+      " visible contribution" +
+      (day.contributionCount === 1 ? "" : "s");
 
-  if (day.future) {
+  if (day.outside) {
+    const radius = layout.paddingRadius ?? 2.2;
     return [
-      '    <g opacity="0.28">',
-      '      <circle cx="' + x + '" cy="' + y + '" r="3" fill="none" stroke="' + colors.border + '"/>',
-      '      <path d="M' + (x - 3) + " " + y + "H" + (x + 3) + '" stroke="' + colors.border + '" stroke-width="1"/>',
+      '    <g opacity="0.22">',
+      '      <circle cx="' + x + '" cy="' + y + '" r="' + radius + '" fill="none" stroke="' + colors.border + '"/>',
       "      <title>" + escapeXml(title) + "</title>",
       "    </g>",
     ].join("\n");
@@ -300,22 +302,23 @@ function renderDay(day, index, layout, colors, currentStreakDates, throughDate) 
   const isCurrent = currentStreakDates.has(day.date);
   const isToday = day.date === throughDate;
   if (day.contributionCount === 0) {
+    const radius = layout.emptyRadius ?? 3.2;
     return [
-      '    <circle cx="' + x + '" cy="' + y + '" r="3.2" fill="' + colors.surface + '" stroke="' + colors.border + '" stroke-width="1" opacity="0.62">',
+      '    <circle cx="' + x + '" cy="' + y + '" r="' + radius + '" fill="' + colors.surface + '" stroke="' + colors.border + '" stroke-width="' + (layout.emptyStrokeWidth ?? 1) + '" opacity="0.62">',
       "      <title>" + escapeXml(title) + "</title>",
       "    </circle>",
     ].join("\n");
   }
 
   const level = LEVEL_INDEX[day.contributionLevel] ?? 0;
-  const radius = [5, 6.5, 8, 9.5][level];
+  const radius = (layout.levelRadii ?? [5, 6.5, 8, 9.5])[level];
   const fill = isCurrent ? colors.orange : colors.levels[level];
   return [
     '    <g>',
     isToday
-      ? '      <circle cx="' + x + '" cy="' + y + '" r="14" fill="none" stroke="' + colors.orange + '" stroke-width="1.5" opacity="0.72"/>'
+      ? '      <circle cx="' + x + '" cy="' + y + '" r="' + (layout.todayRadius ?? 14) + '" fill="none" stroke="' + colors.orange + '" stroke-width="' + (layout.todayStrokeWidth ?? 1.5) + '" opacity="0.72"/>'
       : "",
-    '      <circle cx="' + x + '" cy="' + y + '" r="' + radius + '" fill="' + fill + '" stroke="' + colors.background + '" stroke-width="1.2">',
+    '      <circle cx="' + x + '" cy="' + y + '" r="' + radius + '" fill="' + fill + '" stroke="' + colors.background + '" stroke-width="' + (layout.activeStrokeWidth ?? 1.2) + '">',
     "        <title>" + escapeXml(title) + "</title>",
     "      </circle>",
     "    </g>",
@@ -325,7 +328,7 @@ function renderDay(day, index, layout, colors, currentStreakDates, throughDate) 
 }
 
 function currentSignalPath(model, layout, colors) {
-  const points = model.recentDays
+  const points = model.yearDays
     .map((day, index) => ({ day, ...dayPosition(index, layout) }))
     .filter(({ day }) => model.currentStreakDates.has(day.date));
   if (points.length < 2) return "";
@@ -348,20 +351,32 @@ function metric(label, value, x, y, colors, anchor = "start") {
 
 function renderDesktopActivity(theme, model) {
   const colors = THEMES[theme];
-  const layout = { chartX: 72, chartY: 137, weekGap: 47, dayGap: 33 };
-  const days = model.recentDays
+  const layout = {
+    chartX: 54,
+    chartY: 145,
+    weekGap: 17.05,
+    dayGap: 22,
+    paddingRadius: 1.8,
+    emptyRadius: 2.4,
+    emptyStrokeWidth: 0.8,
+    levelRadii: [3.2, 4.2, 5.3, 6.4],
+    todayRadius: 9,
+    todayStrokeWidth: 1.1,
+    activeStrokeWidth: 0.9,
+  };
+  const days = model.yearDays
     .map((day, index) => renderDay(day, index, layout, colors, model.currentStreakDates, model.throughDate))
     .join("\n");
-  const months = model.monthLabels
+  const months = model.yearMonthLabels
     .map(({ week, month }) => {
       const x = layout.chartX + week * layout.weekGap;
-      return '  <text x="' + x + '" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.2" fill="' + colors.muted + '">' + month + "</text>";
+      return '  <text x="' + x + '" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.8" fill="' + colors.muted + '">' + month + "</text>";
     })
     .join("\n");
   const current = model.currentStreakLabel + " DAY" + (model.currentStreak === 1 ? "" : "S");
   const longest = model.longestStreakLabel + " DAY" + (model.longestStreak === 1 ? "" : "S");
   const description =
-    "A twelve-week constellation of publicly visible GitHub contribution days, with " +
+    "A fifty-three-week constellation of publicly visible GitHub contribution days, with " +
     model.totalContributionsLabel +
     " contributions across " +
     model.activeDays +
@@ -372,7 +387,7 @@ function renderDesktopActivity(theme, model) {
     " days.";
 
   return [
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" role="img" aria-labelledby="activity-title activity-desc">',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 490" role="img" aria-labelledby="activity-title activity-desc">',
     '  <title id="activity-title">Activity constellation</title>',
     '  <desc id="activity-desc">' + escapeXml(description) + "</desc>",
     "  <defs>",
@@ -380,26 +395,26 @@ function renderDesktopActivity(theme, model) {
     '      <path d="M32 0H0V32" fill="none" stroke="' + colors.grid + '" stroke-width="0.65" opacity="0.1"/>',
     "    </pattern>",
     "  </defs>",
-    '  <rect width="1000" height="410" fill="' + colors.background + '"/>',
-    '  <rect width="1000" height="410" fill="url(#activity-grid)"/>',
-    '  <path d="M16 40V16h24M960 16h24v24M984 370v24h-24M40 394H16v-24" fill="none" stroke="' + colors.border + '" stroke-width="1.3" opacity="0.62"/>',
+    '  <rect width="1000" height="490" fill="' + colors.background + '"/>',
+    '  <rect width="1000" height="490" fill="url(#activity-grid)"/>',
+    '  <path d="M16 40V16h24M960 16h24v24M984 450v24h-24M40 474H16v-24" fill="none" stroke="' + colors.border + '" stroke-width="1.3" opacity="0.62"/>',
     '  <text x="44" y="50" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="760" fill="' + colors.primary + '">ACTIVITY CONSTELLATION</text>',
-    '  <text x="45" y="78" font-family="Georgia, Times New Roman, serif" font-size="18" font-style="italic" fill="' + colors.lavender + '">twelve-week trajectory · trailing-year signal metrics</text>',
+    '  <text x="45" y="78" font-family="Georgia, Times New Roman, serif" font-size="18" font-style="italic" fill="' + colors.lavender + '">fifty-three-week flight recorder · trailing-year signal metrics</text>',
     '  <text x="956" y="50" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.3" fill="' + colors.muted + '">VISIBLE GITHUB SIGNAL / UTC</text>',
     months,
-    '  <path d="M55 248C180 90 430 330 624 144" fill="none" stroke="' + colors.lavender + '" stroke-width="1" stroke-dasharray="3 8" opacity="0.26"/>',
+    '  <path d="M50 245C290 92 670 326 950 142" fill="none" stroke="' + colors.lavender + '" stroke-width="1" stroke-dasharray="3 8" opacity="0.18"/>',
     currentSignalPath(model, layout, colors),
-    '  <g aria-label="Recent contribution days">',
+    '  <g aria-label="Trailing-year contribution days">',
     days,
     "  </g>",
-    '  <path d="M656 104V344" stroke="' + colors.border + '" stroke-width="1" opacity="0.42"/>',
-    metric("CURRENT SIGNAL", current, 700, 115, colors),
-    metric("LONGEST ARC / 365D", longest, 700, 178, colors),
-    metric("ACTIVE DAYS / 365D", model.activeDays + " / 365", 700, 241, colors),
-    metric("CONTRIBUTIONS / 365D", model.totalContributionsLabel, 700, 304, colors),
-    '  <circle cx="50" cy="373" r="4" fill="' + colors.orange + '"/>',
-    '  <text x="64" y="378" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="' + colors.muted + '">CURRENT SIGNAL</text>',
-    '  <text x="956" y="378" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="' + colors.muted + '">' + escapeXml(model.rangeLabel.toUpperCase()) + " / UTC</text>",
+    '  <path d="M48 312H952" stroke="' + colors.border + '" stroke-width="1" opacity="0.42"/>',
+    metric("CURRENT SIGNAL", current, 52, 352, colors),
+    metric("LONGEST ARC / 365D", longest, 286, 352, colors),
+    metric("ACTIVE DAYS / 365D", model.activeDays + " / 365", 530, 352, colors),
+    metric("CONTRIBUTIONS / 365D", model.totalContributionsLabel, 760, 352, colors),
+    '  <circle cx="50" cy="455" r="4" fill="' + colors.orange + '"/>',
+    '  <text x="64" y="460" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="' + colors.muted + '">CURRENT SIGNAL</text>',
+    '  <text x="956" y="460" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1" fill="' + colors.muted + '">' + escapeXml(model.rangeLabel.toUpperCase()) + " / UTC</text>",
     "</svg>",
     "",
   ].join("\n");
@@ -407,14 +422,26 @@ function renderDesktopActivity(theme, model) {
 
 function renderMobileActivity(theme, model) {
   const colors = THEMES[theme];
-  const layout = { chartX: 52, chartY: 154, weekGap: 45, dayGap: 39 };
-  const days = model.recentDays
+  const layout = {
+    chartX: 40,
+    chartY: 150,
+    weekGap: 10,
+    dayGap: 27,
+    paddingRadius: 1.5,
+    emptyRadius: 2,
+    emptyStrokeWidth: 0.7,
+    levelRadii: [2.5, 3.2, 3.9, 4.6],
+    todayRadius: 7,
+    todayStrokeWidth: 1,
+    activeStrokeWidth: 0.8,
+  };
+  const days = model.yearDays
     .map((day, index) => renderDay(day, index, layout, colors, model.currentStreakDates, model.throughDate))
     .join("\n");
-  const months = model.monthLabels
+  const months = model.yearMonthLabels
     .map(({ week, month }) => {
       const x = layout.chartX + week * layout.weekGap;
-      return '  <text x="' + x + '" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" letter-spacing="1" fill="' + colors.muted + '">' + month + "</text>";
+      return '  <text x="' + x + '" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="0.7" fill="' + colors.muted + '">' + month + "</text>";
     })
     .join("\n");
   const current = model.currentStreakLabel + " DAY" + (model.currentStreak === 1 ? "" : "S");
@@ -423,7 +450,7 @@ function renderMobileActivity(theme, model) {
   return [
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img" aria-labelledby="activity-mobile-title activity-mobile-desc">',
     '  <title id="activity-mobile-title">Activity constellation</title>',
-    '  <desc id="activity-mobile-desc">A mobile activity constellation showing a twelve-week contribution trajectory and trailing-year signal metrics through ' + escapeXml(model.throughDate) + ".</desc>",
+    '  <desc id="activity-mobile-desc">A mobile activity constellation showing a fifty-three-week contribution flight recorder and trailing-year signal metrics through ' + escapeXml(model.throughDate) + ".</desc>",
     "  <defs>",
     '    <pattern id="activity-mobile-grid" width="30" height="30" patternUnits="userSpaceOnUse">',
     '      <path d="M30 0H0V30" fill="none" stroke="' + colors.grid + '" stroke-width="0.65" opacity="0.1"/>',
@@ -433,18 +460,18 @@ function renderMobileActivity(theme, model) {
     '  <rect width="600" height="720" fill="url(#activity-mobile-grid)"/>',
     '  <path d="M16 40V16h24M560 16h24v24M584 680v24h-24M40 704H16v-24" fill="none" stroke="' + colors.border + '" stroke-width="1.4" opacity="0.62"/>',
     '  <text x="36" y="54" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="34" font-weight="760" fill="' + colors.primary + '">ACTIVITY CONSTELLATION</text>',
-    '  <text x="37" y="84" font-family="Georgia, Times New Roman, serif" font-size="20" font-style="italic" fill="' + colors.lavender + '">twelve-week trajectory · UTC</text>',
+    '  <text x="37" y="84" font-family="Georgia, Times New Roman, serif" font-size="20" font-style="italic" fill="' + colors.lavender + '">fifty-three-week flight recorder · UTC</text>',
     months,
-    '  <path d="M38 286C170 112 360 434 562 206" fill="none" stroke="' + colors.lavender + '" stroke-width="1.2" stroke-dasharray="3 8" opacity="0.26"/>',
+    '  <path d="M38 276C184 116 392 378 562 182" fill="none" stroke="' + colors.lavender + '" stroke-width="1.2" stroke-dasharray="3 8" opacity="0.18"/>',
     currentSignalPath(model, layout, colors),
-    '  <g aria-label="Recent contribution days">',
+    '  <g aria-label="Trailing-year contribution days">',
     days,
     "  </g>",
-    '  <path d="M36 455H564" stroke="' + colors.border + '" stroke-width="1" opacity="0.42"/>',
-    metric("CURRENT SIGNAL", current, 48, 500, colors),
-    metric("LONGEST ARC / 365D", longest, 326, 500, colors),
-    metric("ACTIVE DAYS / 365D", model.activeDays + " / 365", 48, 602, colors),
-    metric("CONTRIBUTIONS / 365D", model.totalContributionsLabel, 326, 602, colors),
+    '  <path d="M36 360H564" stroke="' + colors.border + '" stroke-width="1" opacity="0.42"/>',
+    metric("CURRENT SIGNAL", current, 48, 416, colors),
+    metric("LONGEST ARC / 365D", longest, 326, 416, colors),
+    metric("ACTIVE DAYS / 365D", model.activeDays + " / 365", 48, 550, colors),
+    metric("CONTRIBUTIONS / 365D", model.totalContributionsLabel, 326, 550, colors),
     '  <circle cx="40" cy="683" r="5" fill="' + colors.orange + '"/>',
     '  <text x="56" y="689" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" letter-spacing="1" fill="' + colors.muted + '">CURRENT SIGNAL · THROUGH ' + escapeXml(model.throughDate) + " UTC</text>",
     "</svg>",
@@ -477,25 +504,69 @@ export function activitySummary(model) {
   );
 }
 
-export function replaceActivitySummary(readme, model) {
-  const start = "<!-- activity-summary:start -->";
-  const end = "<!-- activity-summary:end -->";
+function replaceMarkedBlock(readme, marker, content) {
+  const start = "<!-- " + marker + ":start -->";
+  const end = "<!-- " + marker + ":end -->";
   const startIndex = readme.indexOf(start);
   const endIndex = readme.indexOf(end);
   if (startIndex < 0 || endIndex < 0 || endIndex <= startIndex) {
-    throw new Error("README activity summary markers are missing or out of order.");
+    throw new Error("README " + marker + " markers are missing or out of order.");
   }
   if (readme.indexOf(start, startIndex + start.length) >= 0 || readme.indexOf(end, endIndex + end.length) >= 0) {
-    throw new Error("README activity summary markers must be unique.");
+    throw new Error("README " + marker + " markers must be unique.");
   }
 
   return (
     readme.slice(0, startIndex) +
     start +
     "\n" +
-    activitySummary(model) +
+    content +
     "\n" +
     end +
     readme.slice(endIndex + end.length)
+  );
+}
+
+export function replaceActivitySummary(readme, model) {
+  return replaceMarkedBlock(readme, "activity-summary", activitySummary(model));
+}
+
+function escapeMarkdownCell(value) {
+  return String(value).replaceAll("|", "\\|").replaceAll(/\r?\n/g, " ").trim();
+}
+
+export function transmissionSummary(repositories) {
+  if (!Array.isArray(repositories) || repositories.length === 0) {
+    throw new Error("Recent transmissions require at least one public repository.");
+  }
+  const rows = repositories.map((repository) => {
+    const slug = String(repository.slug || "");
+    if (!/^[A-Za-z0-9_.-]+$/.test(slug)) {
+      throw new Error("Recent transmissions received an unsafe repository slug.");
+    }
+    return (
+      "| [" +
+      escapeMarkdownCell(repository.label) +
+      "](https://github.com/agrovr/" +
+      slug +
+      ") | " +
+      escapeMarkdownCell(repository.language) +
+      " | `" +
+      escapeMarkdownCell(repository.pushedAt) +
+      "` |"
+    );
+  });
+  return [
+    "| Mission | Primary language | Last public push |",
+    "| :-- | :-- | --: |",
+    ...rows,
+  ].join("\n");
+}
+
+export function replaceTransmissionSummary(readme, repositories) {
+  return replaceMarkedBlock(
+    readme,
+    "transmission-summary",
+    transmissionSummary(repositories),
   );
 }

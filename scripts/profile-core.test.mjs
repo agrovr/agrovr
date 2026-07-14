@@ -2,12 +2,15 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   ACTIVITY_DAYS,
+  DISPLAY_WEEKS,
   activitySummary,
   activityWindow,
   assertTrustedActivityContext,
   buildActivityModel,
   renderActivityOrbit,
   replaceActivitySummary,
+  replaceTransmissionSummary,
+  transmissionSummary,
   validateContributionCalendar,
 } from "./profile-core.mjs";
 
@@ -80,12 +83,13 @@ test("an unfinished zero-count UTC day keeps yesterday's current signal", () => 
   assert.equal(model.currentStreakDates.has(model.throughDate), false);
 });
 
-test("recent trajectory always contains twelve Sunday-aligned weeks", () => {
+test("flight recorder always contains fifty-three Sunday-aligned weeks", () => {
   const reference = new Date("2026-07-14T12:00:00Z");
   const model = buildActivityModel(fixture(reference), reference);
-  assert.equal(model.recentDays.length, 84);
-  assert.equal(new Date(model.recentStartDate + "T00:00:00Z").getUTCDay(), 0);
-  assert.equal(model.recentDays.filter((day) => day.future).length, 4);
+  assert.equal(model.yearDays.length, DISPLAY_WEEKS * 7);
+  assert.equal(new Date(model.yearStartDate + "T00:00:00Z").getUTCDay(), 0);
+  assert.equal(model.yearDays.filter((day) => day.outside).length, 6);
+  assert.equal(model.yearDays.filter((day) => day.future).length, 4);
 });
 
 test("activity SVGs are deterministic, accessible, and static", () => {
@@ -96,6 +100,7 @@ test("activity SVGs are deterministic, accessible, and static", () => {
   assert.equal(first, second);
   assert.match(first, /<title id="activity-title">Activity constellation<\/title>/);
   assert.match(first, /<desc id="activity-desc">[^<]+<\/desc>/);
+  assert.match(first, /fifty-three-week constellation/);
   assert.doesNotMatch(first, /<animate|@keyframes|<script/i);
   assert.match(renderActivityOrbit("light", model, "mobile"), /viewBox="0 0 600 720"/);
 });
@@ -108,6 +113,27 @@ test("README summary replacement is bounded by unique markers", () => {
   assert.match(replaced, /before[\s\S]+1 publicly visible contribution/);
   assert.match(replaced, /after\n$/);
   assert.equal(activitySummary(model).includes("2026-07-14 UTC"), true);
+});
+
+test("recent transmissions render factual repository telemetry inside bounded markers", () => {
+  const repositories = [
+    {
+      slug: "roleforge-ai",
+      label: "RoleForge AI",
+      language: "TypeScript",
+      pushedAt: "2026-07-14",
+    },
+  ];
+  assert.match(transmissionSummary(repositories), /RoleForge AI.*TypeScript.*2026-07-14/);
+  const readme =
+    "before\n<!-- transmission-summary:start -->\nold\n<!-- transmission-summary:end -->\nafter\n";
+  const replaced = replaceTransmissionSummary(readme, repositories);
+  assert.match(replaced, /\| Mission \| Primary language \| Last public push \|/);
+  assert.match(replaced, /after\n$/);
+  assert.throws(
+    () => transmissionSummary([{ ...repositories[0], slug: "../private" }]),
+    /unsafe repository slug/,
+  );
 });
 
 test("calendar validation rejects duplicate and incomplete data", () => {
