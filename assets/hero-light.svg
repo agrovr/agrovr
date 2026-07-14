@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Ashmit Grover - Orbital Systems Atlas</title>
+  <desc id="hero-desc">An observatory-style systems map showing Ashmit Grover at the center of three connected orbits: AI products, research agents, and cloud systems.</desc>
+  <defs>
+    <pattern id="paper-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8d80a3" stroke-width="0.7" opacity="0.16"/>
+      <circle cx="0" cy="0" r="1.15" fill="#6d5f82" opacity="0.2"/>
+    </pattern>
+    <radialGradient id="lavender-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#cab9ee" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#cab9ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="solar-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f3a55f" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#f3a55f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paper-wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7f0"/>
+      <stop offset="0.56" stop-color="#f6f0e8"/>
+      <stop offset="1" stop-color="#efe8df"/>
+    </linearGradient>
+    <filter id="soft-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="420" fill="url(#paper-wash)"/>
+  <rect width="1000" height="420" fill="url(#paper-grid)"/>
+  <circle cx="766" cy="164" r="190" fill="url(#lavender-glow)" filter="url(#soft-blur)"/>
+  <circle cx="906" cy="344" r="126" fill="url(#solar-glow)" filter="url(#soft-blur)"/>
+  <path d="M18 42V18H42M958 18h24v24M982 378v24h-24M42 402H18v-24" fill="none" stroke="#514363" stroke-width="1.5" opacity="0.6"/>
+  <path d="M36 355H472" stroke="#837495" stroke-width="1" opacity="0.42"/>
+  <circle cx="36" cy="355" r="3.5" fill="#e8893f"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" fill="#6c5e7d">
+    <text x="58" y="52" font-size="15" letter-spacing="2.4">FIELD LOG 07 / PERSONAL SYSTEMS MAP</text>
+    <text x="58" y="382" font-size="14" letter-spacing="1.8">OBSERVATORY / PUBLIC SYSTEMS CATALOG</text>
+  </g>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#21172f">
+    <text x="56" y="143" font-size="70" font-weight="760" letter-spacing="-2">ASHMIT</text>
+    <text x="56" y="210" font-size="70" font-weight="760" letter-spacing="-2">GROVER</text>
+    <text x="59" y="291" font-size="20" font-weight="520">Building AI products and the cloud-native</text>
+    <text x="59" y="319" font-size="20" font-weight="520">systems that carry them into production.</text>
+  </g>
+  <text x="59" y="252" font-family="Georgia, Times New Roman, serif" font-size="31" font-style="italic" fill="#7556a4">orbital systems atlas</text>
+
+  <g transform="translate(748 210)">
+    <line x1="-208" y1="0" x2="208" y2="0" stroke="#77688b" stroke-width="0.9" opacity="0.34"/>
+    <line x1="0" y1="-168" x2="0" y2="168" stroke="#77688b" stroke-width="0.9" opacity="0.34"/>
+    <circle r="151" fill="none" stroke="#68557f" stroke-width="1" opacity="0.24" stroke-dasharray="3 8"/>
+    <ellipse rx="195" ry="66" fill="none" stroke="#7e6899" stroke-width="1.8" opacity="0.72" transform="rotate(-12)"/>
+    <ellipse rx="176" ry="83" fill="none" stroke="#9f6f48" stroke-width="1.4" opacity="0.68" transform="rotate(38)"/>
+    <ellipse rx="142" ry="102" fill="none" stroke="#66517f" stroke-width="1.5" opacity="0.64" transform="rotate(-56)"/>
+    <path d="M-116-89L126-99L-30 119Z" fill="none" stroke="#8e7aa5" stroke-width="1.1" opacity="0.5"/>
+
+    <circle r="47" fill="#f8f3eb" stroke="#5f4779" stroke-width="2"/>
+    <circle r="32" fill="none" stroke="#8e70b4" stroke-width="1" stroke-dasharray="2 6"/>
+    <path d="M-14 0H14M0-14V14" stroke="#e8893f" stroke-width="2"/>
+    <circle r="5" fill="#e8893f"/>
+    <text x="0" y="29" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.5" fill="#4e3a64">A.G.</text>
+
+    <g font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="680" fill="#2b1d3c">
+      <circle cx="126" cy="-99" r="11" fill="#e8893f"/>
+      <circle cx="126" cy="-99" r="18" fill="none" stroke="#e8893f" stroke-width="1" opacity="0.55"/>
+      <text x="93" y="-129" text-anchor="middle">AI PRODUCTS</text>
+
+      <circle cx="-116" cy="-89" r="10" fill="#8b66bd"/>
+      <path d="M-116-108V-70M-135-89H-97" stroke="#8b66bd" stroke-width="1" opacity="0.7"/>
+      <text x="-112" y="-121" text-anchor="middle">RESEARCH AGENTS</text>
+
+      <circle cx="-30" cy="119" r="11" fill="#4e3a64"/>
+      <circle cx="-30" cy="119" r="20" fill="none" stroke="#4e3a64" stroke-width="1" opacity="0.46" stroke-dasharray="3 4"/>
+      <text x="-30" y="155" text-anchor="middle">CLOUD SYSTEMS</text>
+    </g>
+  </g>
+
+  <g fill="#6e5b81">
+    <circle cx="518" cy="70" r="2"/>
+    <circle cx="545" cy="92" r="1.6"/>
+    <circle cx="968" cy="104" r="2.2"/>
+    <circle cx="928" cy="65" r="1.4"/>
+    <circle cx="967" cy="290" r="1.6"/>
+  </g>
+</svg>

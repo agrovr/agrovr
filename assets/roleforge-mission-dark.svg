@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" role="img" aria-labelledby="roleforge-title roleforge-desc">
+  <title id="roleforge-title">RoleForge trajectory engine</title>
+  <desc id="roleforge-desc">A deep-space flight path showing the RoleForge workflow: resume, target role, AI guidance, and export.</desc>
+  <defs>
+    <pattern id="chart-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#aa8dcb" stroke-width="0.65" opacity="0.1"/>
+    </pattern>
+    <radialGradient id="violet-haze" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#67408f" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#372047" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5 1 9Z" fill="#f2a45b"/>
+    </marker>
+    <filter id="blur" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="17"/>
+    </filter>
+  </defs>
+
+  <rect width="920" height="330" fill="#0d0816"/>
+  <rect width="920" height="330" fill="url(#chart-grid)"/>
+  <ellipse cx="557" cy="188" rx="235" ry="132" fill="url(#violet-haze)" filter="url(#blur)"/>
+  <path d="M16 40V16h24M880 16h24v24M904 290v24h-24M40 314H16v-24" fill="none" stroke="#b89adb" stroke-width="1.3" opacity="0.58"/>
+
+  <text x="42" y="48" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="760" letter-spacing="-0.4" fill="#f4eefb">ROLEFORGE / TRAJECTORY ENGINE</text>
+  <text x="43" y="76" font-family="Georgia, Times New Roman, serif" font-size="17" font-style="italic" fill="#c2a5e8">from raw experience to a launch-ready application</text>
+  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#a992c4">MISSION 01</text>
+
+  <path d="M111 205C183 205 242 159 316 164S467 221 557 207 708 133 795 153" fill="none" stroke="#a98bca" stroke-width="8" opacity="0.18"/>
+  <path d="M111 205C183 205 242 159 316 164S467 221 557 207 708 133 795 153" fill="none" stroke="#f2a45b" stroke-width="2.4" marker-end="url(#route-arrow)"/>
+  <path d="M111 205C183 205 242 159 316 164S467 221 557 207 708 133 795 153" fill="none" stroke="#c0a3e0" stroke-width="1" stroke-dasharray="2 10" opacity="0.74"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif" fill="#f3edf9">
+    <g transform="translate(111 205)">
+      <circle r="39" fill="#151020" stroke="#b491d8" stroke-width="1.8"/>
+      <circle r="51" fill="none" stroke="#9472b8" stroke-width="1" stroke-dasharray="2 6" opacity="0.65"/>
+      <path d="M-13-18H8l10 10v27h-31Z" fill="none" stroke="#d0bee4" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M8-18v11h10M-5 1H9M-5 9H7" fill="none" stroke="#f2a45b" stroke-width="2"/>
+      <text y="77" text-anchor="middle" font-size="20" font-weight="720">RESUME</text>
+      <text y="97" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#ad99c5">INPUT</text>
+    </g>
+
+    <g transform="translate(316 164)">
+      <circle r="42" fill="#171020" stroke="#b58cdd" stroke-width="2"/>
+      <circle r="27" fill="none" stroke="#c0a2e0" stroke-width="1.3"/>
+      <circle r="9" fill="none" stroke="#f2a45b" stroke-width="2.2"/>
+      <path d="M0-34v18M0 16v18M-34 0h18M16 0h18" stroke="#b999dc" stroke-width="1.6"/>
+      <circle r="3.8" fill="#f2a45b"/>
+      <text y="83" text-anchor="middle" font-size="20" font-weight="720">TARGET ROLE</text>
+      <text y="103" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#ad99c5">ALIGN</text>
+    </g>
+
+    <g transform="translate(557 207)">
+      <circle r="47" fill="#744fa0" stroke="#b98ddd" stroke-width="2"/>
+      <circle r="59" fill="none" stroke="#b38bd5" stroke-width="1" stroke-dasharray="3 7"/>
+      <path d="M0-24 6-7 24 0 6 7 0 24-6 7-24 0-6-7Z" fill="#f5b16f"/>
+      <circle r="5" fill="#fff8ee"/>
+      <text y="87" text-anchor="middle" font-size="20" font-weight="720">AI GUIDANCE</text>
+      <text y="107" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#ad99c5">GENERATE</text>
+    </g>
+
+    <g transform="translate(795 153)">
+      <circle r="40" fill="#151020" stroke="#f0a158" stroke-width="2"/>
+      <ellipse rx="17" ry="26" fill="none" stroke="#d2c0e5" stroke-width="2.2" transform="rotate(35)"/>
+      <path d="M-19 19 3 10M9-20l9-9M5 23l4 16" stroke="#f2a45b" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="-2" cy="-3" r="5" fill="#b491d8"/>
+      <text y="85" text-anchor="middle" font-size="20" font-weight="720">EXPORT</text>
+      <text y="105" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.2" fill="#ad99c5">SHIP</text>
+    </g>
+  </g>
+
+  <g fill="#cfbae7" opacity="0.88">
+    <circle cx="55" cy="111" r="1.7"/><circle cx="78" cy="129" r="2.2"/><circle cx="850" cy="92" r="1.8"/><circle cx="874" cy="115" r="2.3"/>
+    <path d="M55 111 78 129M850 92l24 23" stroke="#b49acd" stroke-width="1"/>
+  </g>
+</svg>

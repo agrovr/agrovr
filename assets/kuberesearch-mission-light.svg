@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 350" role="img" aria-labelledby="kube-title kube-desc">
+  <title id="kube-title">KubeResearch distributed research constellation</title>
+  <desc id="kube-desc">An observatory-style distributed systems map where a research query travels through an API and queue, fans out to workers, and resolves into a report.</desc>
+  <defs>
+    <pattern id="chart-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#7d6d92" stroke-width="0.65" opacity="0.13"/>
+    </pattern>
+    <radialGradient id="violet-haze" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c5afe7" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#c5afe7" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="signal-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M1 1L9 5 1 9Z" fill="#df8139"/>
+    </marker>
+    <filter id="blur" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="17"/>
+    </filter>
+  </defs>
+
+  <rect width="920" height="350" fill="#f8f3eb"/>
+  <rect width="920" height="350" fill="url(#chart-grid)"/>
+  <ellipse cx="580" cy="198" rx="260" ry="135" fill="url(#violet-haze)" filter="url(#blur)"/>
+  <path d="M16 40V16h24M880 16h24v24M904 310v24h-24M40 334H16v-24" fill="none" stroke="#5b486e" stroke-width="1.3" opacity="0.58"/>
+
+  <text x="42" y="48" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="27" font-weight="760" letter-spacing="-0.4" fill="#271936">KUBERESEARCH / RESEARCH CONSTELLATION</text>
+  <text x="43" y="76" font-family="Georgia, Times New Roman, serif" font-size="17" font-style="italic" fill="#7556a4">one question, coordinated across a cloud-native fleet</text>
+  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#786989">MISSION 02</text>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M123 205C166 205 188 171 226 171" stroke="#b39ccf" stroke-width="8" opacity="0.2"/>
+    <path d="M123 205C166 205 188 171 226 171" stroke="#df8139" stroke-width="2.2" marker-end="url(#signal-arrow)"/>
+    <path d="M300 171C342 171 364 207 407 207" stroke="#b39ccf" stroke-width="8" opacity="0.2"/>
+    <path d="M300 171C342 171 364 207 407 207" stroke="#df8139" stroke-width="2.2" marker-end="url(#signal-arrow)"/>
+    <path d="M499 207C544 207 563 204 593 203" stroke="#b39ccf" stroke-width="8" opacity="0.2"/>
+    <path d="M499 207C544 207 563 204 593 203" stroke="#df8139" stroke-width="2.2" marker-end="url(#signal-arrow)"/>
+    <path d="M711 199C758 194 772 180 791 180" stroke="#b39ccf" stroke-width="8" opacity="0.2"/>
+    <path d="M711 199C758 194 772 180 791 180" stroke="#df8139" stroke-width="2.2" marker-end="url(#signal-arrow)"/>
+  </g>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif" fill="#281a38">
+    <g transform="translate(88 205)">
+      <circle r="36" fill="#faf6ef" stroke="#80659e" stroke-width="1.8"/>
+      <circle r="47" fill="none" stroke="#80659e" stroke-width="1" stroke-dasharray="2 6" opacity="0.55"/>
+      <circle r="13" fill="none" stroke="#df8139" stroke-width="2"/>
+      <path d="M-21 0H21M0-21V21" stroke="#654b7b" stroke-width="1.4"/>
+      <circle r="4" fill="#df8139"/>
+      <text y="70" text-anchor="middle" font-size="19" font-weight="720">QUERY</text>
+    </g>
+
+    <g transform="translate(263 171)">
+      <circle r="37" fill="#f7f1e9" stroke="#9d7ac6" stroke-width="2"/>
+      <path d="M-17-12 0-22 17-12V12L0 22-17 12Z" fill="none" stroke="#674d7d" stroke-width="2"/>
+      <path d="M-9 0H9M0-9V9" stroke="#df8139" stroke-width="2"/>
+      <text y="73" text-anchor="middle" font-size="19" font-weight="720">API</text>
+    </g>
+
+    <g transform="translate(454 207)">
+      <circle r="45" fill="#6f4e93" stroke="#4d3568" stroke-width="2"/>
+      <ellipse rx="21" ry="10" cy="-13" fill="none" stroke="#f7eefa" stroke-width="2"/>
+      <path d="M-21-13v26c0 6 42 6 42 0v-26M-21 0c0 6 42 6 42 0" fill="none" stroke="#f7eefa" stroke-width="2"/>
+      <circle r="57" fill="none" stroke="#8e70b4" stroke-width="1" stroke-dasharray="3 7"/>
+      <text y="85" text-anchor="middle" font-size="19" font-weight="720">QUEUE</text>
+    </g>
+
+    <g transform="translate(650 205)">
+      <ellipse rx="72" ry="77" fill="none" stroke="#84679f" stroke-width="1.2" stroke-dasharray="3 6"/>
+      <path d="M0 0-27-54M0 0 38-42M0 0-35 43M0 0 42 38" stroke="#967bb5" stroke-width="1.2"/>
+      <circle r="18" fill="#f7f1e9" stroke="#df8139" stroke-width="2"/>
+      <circle cx="-27" cy="-54" r="13" fill="#8e6cb1"/><circle cx="38" cy="-42" r="13" fill="#a889cc"/>
+      <circle cx="-35" cy="43" r="13" fill="#80619f"/><circle cx="42" cy="38" r="13" fill="#b598d2"/>
+      <circle r="5" fill="#df8139"/>
+      <text y="102" text-anchor="middle" font-size="19" font-weight="720">WORKER FLEET</text>
+    </g>
+
+    <g transform="translate(832 180)">
+      <circle r="39" fill="#faf6ef" stroke="#d77b37" stroke-width="2"/>
+      <path d="M-16-20H8l10 10v31h-34Z" fill="none" stroke="#604675" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M8-20v11h10M-8 2l7 7L11-5" fill="none" stroke="#df8139" stroke-width="2.2"/>
+      <text y="76" text-anchor="middle" font-size="19" font-weight="720">REPORT</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.1" fill="#746585">
+    <text x="88" y="296" text-anchor="middle">INGEST</text><text x="263" y="278" text-anchor="middle">ROUTE</text>
+    <text x="454" y="316" text-anchor="middle">COORDINATE</text><text x="832" y="279" text-anchor="middle">RESOLVE</text>
+  </g>
+</svg>
