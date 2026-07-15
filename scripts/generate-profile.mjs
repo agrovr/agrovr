@@ -5,6 +5,7 @@ import { replaceTransmissionSummary } from "./profile-core.mjs";
 const ROOT = process.cwd();
 const OWNER = "agrovr";
 const REPOSITORIES = [
+  { slug: "maniflight", label: "Maniflight" },
   { slug: "roleforge-ai", label: "RoleForge AI" },
   { slug: "kube-research-aiq", label: "KubeResearch AIQ" },
 ];

@@ -26,6 +26,7 @@ body:
     attributes:
       label: Which system is this about?
       options:
+        - Maniflight
         - RoleForge AI
         - KubeResearch AIQ
         - Portfolio / profile
