@@ -90,6 +90,12 @@ function onlineLinks(readme) {
   for (const match of readme.matchAll(/(?<!!)\[[^\]]+\]\((https?:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)/g)) {
     links.add(match[1]);
   }
+  for (const match of readme.matchAll(/\b(?:src|srcset)="(https?:\/\/[^"\s]+)(?:\s+[^"\s]+)?"/gi)) {
+    links.add(match[1]);
+  }
+  for (const match of readme.matchAll(/!\[[^\]]*\]\((https?:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)/g)) {
+    links.add(match[1]);
+  }
   return [...links].sort();
 }
 
@@ -137,8 +143,19 @@ async function validateReadme(readme) {
   if (/Activity constellation|activity-orbit-|activity-summary:/i.test(readme)) {
     fail("README still contains the removed activity constellation.");
   }
-  if (!readme.includes("## Choose your orbit") || (readme.match(/<details>/g) || []).length < 3) {
+  if (!readme.includes("## Choose your orbit") || (readme.match(/<details>/g) || []).length < 4) {
     fail("README is missing the interactive orbit controls.");
+  }
+  for (const required of [
+    "https://github.com/agrovr/maniflight",
+    "https://agrovr.github.io/maniflight/",
+    "https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg",
+    "Reveal the Maniflight readiness map",
+  ]) {
+    if (!readme.includes(required)) fail("README is missing the Maniflight control: " + required);
+  }
+  if (!/alt="[^"]*Maniflight[^"]*architecture[^"]*automation[^"]*security[^"]*community[^"]*"/i.test(readme)) {
+    fail("Maniflight preview needs meaningful evidence-domain alt text.");
   }
   if (!readme.includes("issues/new?template=transmission.yml")) {
     fail("README is missing the GitHub transmission form control.");
@@ -302,7 +319,7 @@ async function validateWebp(relativePath) {
 }
 
 async function checkUrl(url) {
-  const headers = { "User-Agent": "agrovr-profile-verifier", Accept: "text/html,application/xhtml+xml,*/*" };
+  const headers = { "User-Agent": "agrovr-profile-verifier", Accept: "*/*" };
   const attempts = [
     { method: "HEAD", headers },
     { method: "GET", headers: { ...headers, Range: "bytes=0-1023" } },

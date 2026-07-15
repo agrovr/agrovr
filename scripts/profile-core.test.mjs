@@ -7,6 +7,12 @@ import {
 
 const REPOSITORIES = [
   {
+    slug: "maniflight",
+    label: "Maniflight",
+    language: "TypeScript",
+    pushedAt: "2026-07-15",
+  },
+  {
     slug: "roleforge-ai",
     label: "RoleForge AI",
     language: "TypeScript",
@@ -15,7 +21,10 @@ const REPOSITORIES = [
 ];
 
 test("recent transmissions render factual repository telemetry inside bounded markers", () => {
-  assert.match(transmissionSummary(REPOSITORIES), /RoleForge AI.*TypeScript.*2026-07-14/);
+  const summary = transmissionSummary(REPOSITORIES);
+  assert.match(summary, /Maniflight.*TypeScript.*2026-07-15/);
+  assert.match(summary, /RoleForge AI.*TypeScript.*2026-07-14/);
+  assert.ok(summary.indexOf("Maniflight") < summary.indexOf("RoleForge AI"));
   const readme =
     "before\n<!-- transmission-summary:start -->\nold\n<!-- transmission-summary:end -->\nafter\n";
   const replaced = replaceTransmissionSummary(readme, REPOSITORIES);
