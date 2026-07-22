@@ -32,33 +32,33 @@ I turn ambiguous workflows into dependable AI products—designing the interface
 
 Pick a route, then reveal its system map and flight plan.
 
-### Maniflight · Repository preflight
+### Maniflight · PR Flight Director
 
-[Maniflight](https://github.com/agrovr/maniflight) is a read-only repository preflight CLI and GitHub Action. It evaluates architecture, automation, security hygiene, and community readiness through 25 deterministic checks, then shows the evidence behind every result.
+[Maniflight](https://github.com/agrovr/maniflight) is a read-only GitHub PR diagnostics CLI that explains why a pull request is blocked, separates observed blockers from evidence gaps, and identifies who can act next. It never comments, approves, reruns, or merges.
 
-**[Explore the live self-scan →](https://agrovr.github.io/maniflight/)** · [Inspect the source](https://github.com/agrovr/maniflight)
+**[Install stable v1.0.0 →](https://github.com/agrovr/maniflight/releases/tag/v1.0.0)** · [Explore the live self-scan](https://agrovr.github.io/maniflight/) · [Inspect the source](https://github.com/agrovr/maniflight)
 
 <details>
-<summary><strong>Reveal the Maniflight readiness map</strong></summary>
+<summary><strong>Reveal the Maniflight system map</strong></summary>
 
 <br>
 
 <p align="center">
 <a href="https://agrovr.github.io/maniflight/">
-<img src="https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg" alt="Maniflight repository self-scan across architecture, automation, security, and community readiness" width="760">
+<img src="https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg" alt="Maniflight secondary repository self-scan across architecture, automation, security, and community evidence" width="760">
 </a>
 </p>
 
 #### Flight plan
 
-`repository → bounded evidence collection → deterministic rules → score + confidence → interactive report`
+`pull request → read-only GitHub evidence → blockers + unknowns → next actor → terminal or JSON`
 
 #### Systems aboard
 
-- TypeScript and Node.js 22+
-- 25 deterministic checks across four evidence domains
-- Machine-readable JSON plus standalone HTML and SVG reports
-- Read-only GitHub Action with keyboard navigation, light/dark themes, and reduced-motion support
+- TypeScript on Node.js 22.12+ and Node.js 24
+- Combines PR metadata, reviews, checks, statuses, Actions runs, and active branch rules
+- Stable, schema-versioned terminal and JSON diagnostics
+- Repository scan remains available as a secondary GitHub Action with accessible HTML and SVG reports
 
 </details>
 
@@ -143,7 +143,7 @@ Selected public systems, refreshed daily from GitHub without an external profile
 <!-- transmission-summary:start -->
 | Mission | Primary language | Last public push |
 | :-- | :-- | --: |
-| [Maniflight](https://github.com/agrovr/maniflight) | TypeScript | `2026-07-20` |
+| [Maniflight](https://github.com/agrovr/maniflight) | TypeScript | `2026-07-22` |
 | [RoleForge AI](https://github.com/agrovr/roleforge-ai) | TypeScript | `2026-07-20` |
 | [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-04-23` |
 <!-- transmission-summary:end -->
