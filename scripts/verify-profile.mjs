@@ -147,10 +147,12 @@ async function validateReadme(readme) {
     fail("README is missing the interactive orbit controls.");
   }
   for (const required of [
+    "### Maniflight · PR Flight Director",
     "https://github.com/agrovr/maniflight",
+    "https://github.com/agrovr/maniflight/releases/tag/v1.0.0",
     "https://agrovr.github.io/maniflight/",
     "https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg",
-    "Reveal the Maniflight readiness map",
+    "Reveal the Maniflight system map",
   ]) {
     if (!readme.includes(required)) fail("README is missing the Maniflight control: " + required);
   }
