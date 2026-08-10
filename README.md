@@ -143,7 +143,7 @@ Selected public systems, refreshed daily from GitHub without an external profile
 <!-- transmission-summary:start -->
 | Mission | Primary language | Last public push |
 | :-- | :-- | --: |
-| [Maniflight](https://github.com/agrovr/maniflight) | TypeScript | `2026-08-05` |
+| [Maniflight](https://github.com/agrovr/maniflight) | TypeScript | `2026-08-10` |
 | [RoleForge AI](https://github.com/agrovr/roleforge-ai) | TypeScript | `2026-07-27` |
 | [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-04-23` |
 <!-- transmission-summary:end -->
