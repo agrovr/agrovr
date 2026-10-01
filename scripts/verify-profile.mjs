@@ -152,7 +152,7 @@ async function validateReadme(readme) {
   for (const required of [
     "### Maniflight · PR Flight Director",
     "https://github.com/agrovr/maniflight",
-    "https://github.com/agrovr/maniflight/releases/tag/v1.0.0",
+    "https://www.npmjs.com/package/maniflight",
     "https://agrovr.github.io/maniflight/",
     "https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg",
     "Reveal the Maniflight systems aboard",

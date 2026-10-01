@@ -44,7 +44,7 @@ A read-only GitHub CLI that explains **why a pull request is blocked**, separate
 </picture>
 </a>
 
-**[Install v1.0.0 →](https://github.com/agrovr/maniflight/releases/tag/v1.0.0)** · [Website](https://agrovr.github.io/maniflight/) · [Live self-scan](https://agrovr.github.io/maniflight/scan/) · [Source](https://github.com/agrovr/maniflight)
+**[`npm install -g maniflight` →](https://www.npmjs.com/package/maniflight)** · [Website](https://agrovr.github.io/maniflight/) · [Live self-scan](https://agrovr.github.io/maniflight/scan/) · [Source](https://github.com/agrovr/maniflight)
 
 <details>
 <summary><strong>Reveal the Maniflight systems aboard</strong></summary>
