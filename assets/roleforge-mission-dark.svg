@@ -24,7 +24,7 @@
 
   <text x="42" y="48" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="760" letter-spacing="-0.4" fill="#f4eefb">ROLEFORGE / TRAJECTORY ENGINE</text>
   <text x="43" y="76" font-family="Georgia, Times New Roman, serif" font-size="17" font-style="italic" fill="#c2a5e8">from raw experience to a launch-ready application</text>
-  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#a992c4">MISSION 01</text>
+  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#a992c4">MISSION 02</text>
 
   <path d="M111 205C183 205 242 159 316 164S467 221 557 207 708 133 795 153" fill="none" stroke="#a98bca" stroke-width="8" opacity="0.18"/>
   <path d="M111 205C183 205 242 159 316 164S467 221 557 207 708 133 795 153" fill="none" stroke="#f2a45b" stroke-width="2.4" marker-end="url(#route-arrow)"/>

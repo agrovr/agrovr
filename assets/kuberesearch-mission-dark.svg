@@ -24,7 +24,7 @@
 
   <text x="42" y="48" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="27" font-weight="760" letter-spacing="-0.4" fill="#f4eefb">KUBERESEARCH / RESEARCH CONSTELLATION</text>
   <text x="43" y="76" font-family="Georgia, Times New Roman, serif" font-size="17" font-style="italic" fill="#c2a5e8">one question, coordinated across a cloud-native fleet</text>
-  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#a992c4">MISSION 02</text>
+  <text x="878" y="48" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="1.6" fill="#a992c4">MISSION 03</text>
 
   <g fill="none" stroke-linecap="round">
     <path d="M123 205C166 205 188 171 226 171" stroke="#a98bca" stroke-width="8" opacity="0.18"/>

@@ -15,33 +15,48 @@
 <h1 align="center">Ashmit Grover</h1>
 
 <p align="center">
-  <strong><a href="https://agrover7.com/">Enter the interactive atlas</a></strong> ·
+  <strong><a href="https://agrover7.com/">Interactive portfolio</a></strong> ·
   <a href="https://www.linkedin.com/in/agrover7/">LinkedIn</a> ·
-  <a href="https://github.com/agrovr/agrovr/issues/new?template=transmission.yml">Open a GitHub transmission</a>
+  <a href="https://github.com/agrovr/agrovr/issues/new?template=transmission.yml">Ask me something</a>
 </p>
 
 ## Mission control
 
-I turn ambiguous workflows into dependable AI products—designing the interface, intelligence layer, and cloud systems as one connected mission.
+I turn ambiguous workflows into dependable AI products, designing the interface, the intelligence layer, and the cloud systems as one connected mission.
 
-- **Product layer** — clear AI-assisted workflows with useful human checkpoints.
-- **Intelligence layer** — agent orchestration, research flows, evaluation, and APIs.
-- **Systems layer** — containerized services, Kubernetes delivery, monitoring, and production checks.
+| Product layer | Intelligence layer | Systems layer |
+| :-- | :-- | :-- |
+| AI-assisted workflows with clear human checkpoints | Agent orchestration, research flows, evaluation, and APIs | Containerized services, Kubernetes delivery, monitoring, and production checks |
 
 ## Choose your orbit
 
-Pick a route, then reveal its system map and flight plan.
+Three flagship systems, each shown as the path a request takes through it.
 
 ### Maniflight · PR Flight Director
 
-[Maniflight](https://github.com/agrovr/maniflight) is a read-only GitHub PR diagnostics CLI that explains why a pull request is blocked, separates observed blockers from evidence gaps, and identifies who can act next. It never comments, approves, reruns, or merges.
+A read-only GitHub CLI that explains **why a pull request is blocked**, separates observed blockers from missing evidence, and names **who can act next**. It never comments, approves, reruns, or merges.
 
-**[Install stable v1.0.0 →](https://github.com/agrovr/maniflight/releases/tag/v1.0.0)** · [Explore the live self-scan](https://agrovr.github.io/maniflight/) · [Inspect the source](https://github.com/agrovr/maniflight)
+<a href="https://github.com/agrovr/maniflight">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/maniflight-mission-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/maniflight-mission-light.svg">
+  <img src="./assets/maniflight-mission-light.svg" alt="Maniflight mission path: a pull request enters a read-only evidence scan that splits observed blockers from evidence gaps, and both converge on the next actor" width="100%">
+</picture>
+</a>
+
+**[Install v1.0.0 →](https://github.com/agrovr/maniflight/releases/tag/v1.0.0)** · [Live self-scan](https://agrovr.github.io/maniflight/) · [Source](https://github.com/agrovr/maniflight)
 
 <details>
-<summary><strong>Reveal the Maniflight system map</strong></summary>
+<summary><strong>Reveal the Maniflight systems aboard</strong></summary>
 
 <br>
+
+`pull request → read-only GitHub evidence → blockers + unknowns → next actor → terminal or JSON`
+
+- TypeScript on Node.js 22.12+ and Node.js 24
+- Combines PR metadata, reviews, checks, statuses, Actions runs, and active branch rules
+- Stable, schema-versioned terminal and JSON diagnostics
+- Repository scan remains available as a secondary GitHub Action with accessible HTML and SVG reports
 
 <p align="center">
 <a href="https://agrovr.github.io/maniflight/">
@@ -49,29 +64,11 @@ Pick a route, then reveal its system map and flight plan.
 </a>
 </p>
 
-#### Flight plan
-
-`pull request → read-only GitHub evidence → blockers + unknowns → next actor → terminal or JSON`
-
-#### Systems aboard
-
-- TypeScript on Node.js 22.12+ and Node.js 24
-- Combines PR metadata, reviews, checks, statuses, Actions runs, and active branch rules
-- Stable, schema-versioned terminal and JSON diagnostics
-- Repository scan remains available as a secondary GitHub Action with accessible HTML and SVG reports
-
 </details>
 
 ### RoleForge AI · Trajectory engine
 
-[RoleForge AI](https://github.com/agrovr/roleforge-ai) turns a source resume and target role into structured fit analysis, gap guidance, tailored documents, interview preparation, and exportable artifacts. Its public frontend includes authentication, saved projects, entitlement flows, theme support, and production smoke coverage.
-
-**[Launch the product →](https://roleforgeai.vercel.app/)** · [Inspect the source](https://github.com/agrovr/roleforge-ai)
-
-<details>
-<summary><strong>Reveal the RoleForge system map</strong></summary>
-
-<br>
+Turns a resume and a target role into **fit analysis, gap guidance, tailored documents, and interview prep**, with auth, saved projects, and paid entitlements in production.
 
 <a href="https://roleforgeai.vercel.app/">
 <picture>
@@ -81,11 +78,14 @@ Pick a route, then reveal its system map and flight plan.
 </picture>
 </a>
 
-#### Flight plan
+**[Launch the product →](https://roleforgeai.vercel.app/)** · [Source](https://github.com/agrovr/roleforge-ai)
+
+<details>
+<summary><strong>Reveal the RoleForge systems aboard</strong></summary>
+
+<br>
 
 `resume upload → target role → fit and gap analysis → guided edits → application materials → export`
-
-#### Systems aboard
 
 - Next.js 16, React 19, and TypeScript
 - Supabase authentication and saved projects
@@ -96,14 +96,7 @@ Pick a route, then reveal its system map and flight plan.
 
 ### KubeResearch AIQ · Distributed research constellation
 
-[KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) is a Kubernetes-native research-agent platform inspired by NVIDIA AI-Q. A FastAPI control plane coordinates queued workers and persistent state while a React dashboard exposes research runs. Helm, Argo CD, Prometheus, autoscaling, and network-policy resources make the architecture operable—not just diagrammable.
-
-**[Explore the repository →](https://github.com/agrovr/kube-research-aiq)**
-
-<details>
-<summary><strong>Reveal the KubeResearch system map</strong></summary>
-
-<br>
+A **Kubernetes-native research-agent platform**: a FastAPI control plane fans questions out to queued workers, with Helm, Argo CD, autoscaling, and Prometheus making it operable, not just diagrammable.
 
 <a href="https://github.com/agrovr/kube-research-aiq">
 <picture>
@@ -113,32 +106,35 @@ Pick a route, then reveal its system map and flight plan.
 </picture>
 </a>
 
-#### Flight plan
+**[Explore the repository →](https://github.com/agrovr/kube-research-aiq)**
+
+<details>
+<summary><strong>Reveal the KubeResearch systems aboard</strong></summary>
+
+<br>
 
 `research query → FastAPI control plane → Redis queue → worker fleet → persisted report`
-
-#### Systems aboard
 
 - FastAPI, Redis, PostgreSQL, and a React dashboard
 - Kubernetes, Helm, Argo CD, HPA, NetworkPolicy, and Prometheus
 - Deterministic mock mode for local and repeatable runs
 - Optional NVIDIA-hosted, NIM-compatible execution path
 
-This is an independent project inspired by NVIDIA AI-Q; it is not affiliated with or endorsed by NVIDIA.
+<sub>Independent project inspired by NVIDIA AI-Q; not affiliated with or endorsed by NVIDIA.</sub>
 
 </details>
 
 ## Open a transmission
 
-Ask a question, leave useful feedback, or explore collaboration through a structured GitHub form. The conversation continues in a real public thread, so it is easy to follow up.
+Questions, feedback, or a collaboration idea? Send it through a short GitHub form, and the conversation continues in a public thread that's easy to follow up on.
 
-**[Start a GitHub transmission →](https://github.com/agrovr/agrovr/issues/new?template=transmission.yml)** · [Use the private contact channel](https://agrover7.com/#contact)
+**[Ask a question →](https://github.com/agrovr/agrovr/issues/new?template=transmission.yml)** · [Contact me privately](https://agrover7.com/#contact)
 
 <sub>GitHub transmissions are public. Do not include private, sensitive, or secret information.</sub>
 
 ## Public mission status
 
-Selected public systems, refreshed daily from GitHub without an external profile widget.
+Refreshed daily from GitHub, with no third-party widgets.
 
 <!-- transmission-summary:start -->
 | Mission | Primary language | Last public push |
@@ -148,18 +144,16 @@ Selected public systems, refreshed daily from GitHub without an external profile
 | [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-04-23` |
 <!-- transmission-summary:end -->
 
-## Mission archive
-
 <details>
-<summary><strong>Open earlier missions</strong></summary>
+<summary><strong>Mission archive</strong>: earlier projects</summary>
 
-- **[Resume Tailor Backend](https://github.com/agrovr/resume-tailor-backend)** — a standalone FastAPI service for job-description analysis, compatibility scoring, Gemini-assisted tailoring, DOCX generation, and Docker/Cloud Run deployment.
-- **[CollegeProjects](https://github.com/agrovr/CollegeProjects)** — a C++ learning archive that includes a Key Management System and a Tamagotchi-style pet game.
+<br>
+
+- **[Resume Tailor Backend](https://github.com/agrovr/resume-tailor-backend)**: a standalone FastAPI service for job-description analysis, compatibility scoring, Gemini-assisted tailoring, DOCX generation, and Docker/Cloud Run deployment.
+- **[CollegeProjects](https://github.com/agrovr/CollegeProjects)**: a C++ learning archive that includes a Key Management System and a Tamagotchi-style pet game.
 
 </details>
 
-## Ground station
-
-Run the full interactive constellation at [agrover7.com](https://agrover7.com/) or connect on [LinkedIn](https://www.linkedin.com/in/agrover7/).
+<br>
 
 <p align="center"><sub>signal from <a href="https://agrover7.com/">ash.</a> · all stars reserved ✦</sub></p>

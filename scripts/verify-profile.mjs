@@ -13,6 +13,8 @@ const REQUIRED_FILES = [
   "assets/hero-motion-dark.webp",
   "assets/hero-motion-mobile-light.webp",
   "assets/hero-motion-mobile-dark.webp",
+  "assets/maniflight-mission-light.svg",
+  "assets/maniflight-mission-dark.svg",
   "assets/roleforge-mission-light.svg",
   "assets/roleforge-mission-dark.svg",
   "assets/kuberesearch-mission-light.svg",
@@ -21,6 +23,7 @@ const REQUIRED_FILES = [
   "scripts/profile-core.mjs",
   "scripts/profile-core.test.mjs",
   "scripts/generate-hero-motion.py",
+  "scripts/generate-maniflight-card.py",
   "scripts/verify-profile.mjs",
   "requirements-motion.txt",
   ".github/workflows/profile.yml",
@@ -152,7 +155,8 @@ async function validateReadme(readme) {
     "https://github.com/agrovr/maniflight/releases/tag/v1.0.0",
     "https://agrovr.github.io/maniflight/",
     "https://raw.githubusercontent.com/agrovr/maniflight/main/demo/orbit.svg",
-    "Reveal the Maniflight system map",
+    "Reveal the Maniflight systems aboard",
+    "./assets/maniflight-mission-dark.svg",
   ]) {
     if (!readme.includes(required)) fail("README is missing the Maniflight control: " + required);
   }
