@@ -141,7 +141,7 @@ Refreshed daily from GitHub, with no third-party widgets.
 | :-- | :-- | --: |
 | [Maniflight](https://github.com/agrovr/maniflight) | TypeScript | `2026-10-01` |
 | [RoleForge AI](https://github.com/agrovr/roleforge-ai) | TypeScript | `2026-10-02` |
-| [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-04-23` |
+| [KubeResearch AIQ](https://github.com/agrovr/kube-research-aiq) | Python | `2026-10-04` |
 <!-- transmission-summary:end -->
 
 <details>
